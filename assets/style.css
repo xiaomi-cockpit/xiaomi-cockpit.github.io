@@ -316,3 +316,16 @@ footer p { max-width: 46em; margin: 0 auto .6em; }
 }
 .brand .mark:has(img) { width: 34px; height: 34px; border-radius: 0; background: none; }
 .brand .mark img { width: 100%; height: 100%; display: block; object-fit: contain; }
+
+/* taps: no blue browser rectangle; a press shows the accent tint in each element's own shape */
+* { -webkit-tap-highlight-color: transparent; }
+.nav li a:active, .toc a:active, .iconbtn:active { background: rgba(var(--accent-rgb), .24); }
+.btn:active { transform: scale(.97); }
+@media (hover: none) {
+  /* on a touch screen :hover sticks after a tap, so it is not used there */
+  .nav li a:hover:not([aria-current="page"]) { background: transparent; }
+  .iconbtn:hover { background: var(--chip); }
+  .btn:hover { transform: none; }
+  .nav li a:active, .toc a:active, .iconbtn:active { background: rgba(var(--accent-rgb), .24); }
+  .btn:active { transform: scale(.97); }
+}
