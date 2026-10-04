@@ -151,17 +151,19 @@ header.top { position: sticky; top: 12px; z-index: 50; padding-top: 12px; }
 
 /* the app preview (a drawn car screen) */
 .carscreen { padding: 14px; border-radius: 28px; --r: 28px; }
-.screen { position: relative; display: grid; grid-template-columns: 62px 1fr 188px; gap: 10px; aspect-ratio: 16 / 9.6; }
+.screen { position: relative; display: grid; grid-template-columns: 62px 1fr; gap: 10px; aspect-ratio: 1.26 / 1; }
+.mmain { display: grid; grid-template-rows: 37% 1fr; gap: 10px; min-height: 0; }
+.mtop { display: grid; grid-template-columns: 1.08fr 1fr; gap: 10px; min-height: 0; }
 .screen > * { min-width: 0; }
 .mdock { display: flex; flex-direction: column; gap: 9px; padding: 9px; border-radius: 18px; --r: 18px; }
 .mdock i { display: block; aspect-ratio: 1; border-radius: 11px; background: var(--c, var(--accent)); opacity: .95; }
 .mdock i:last-child { background: var(--chip); border-radius: 50%; opacity: 1; }
-.mmap { position: relative; border-radius: 18px; overflow: hidden; background: var(--map-bg); border: 1px solid var(--rim); transition: background-color .4s; }
+.mmap { position: relative; min-height: 0; border-radius: 18px; overflow: hidden; background: var(--map-bg); border: 1px solid var(--rim); transition: background-color .4s; }
 .mmap svg.streets { position: absolute; inset: 0; width: 100%; height: 100%; }
 .mmap .street { stroke: var(--map-line); stroke-width: 7; fill: none; stroke-linecap: round; }
 .mmap .route { stroke: #4b8df8; stroke-width: 6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
 .mmap .car { fill: var(--accent); stroke: #fff; stroke-width: 3; }
-.mbanner { position: absolute; left: 10px; top: 10px; right: 56px; display: flex; gap: 9px; align-items: center; padding: 8px; border-radius: 14px; --r: 14px; }
+.mbanner { position: absolute; left: 10px; top: 10px; max-width: 62%; display: flex; gap: 9px; align-items: center; padding: 8px; border-radius: 14px; --r: 14px; }
 .mbanner .turn { width: 38px; height: 38px; border-radius: 10px; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; flex: none; }
 .mbanner b { display: block; font-size: 1.05rem; line-height: 1.1; }
 .mbanner span { font-size: .72rem; color: var(--dim); line-height: 1.2; display: block; }
@@ -295,12 +297,12 @@ footer p { max-width: 46em; margin: 0 auto .6em; }
   .nav ul li a { padding: 12px 14px; }
   .nav .iconbtn#theme-btn { margin-left: auto; }
   .grid.f3, .grid.f2, .sizes { grid-template-columns: 1fr; }
-  .screen { grid-template-columns: 40px minmax(0, 1fr) 112px; aspect-ratio: auto; min-height: 250px; }
+  .screen { grid-template-columns: 40px minmax(0, 1fr); aspect-ratio: auto; min-height: 330px; }
   .carscreen { padding: 10px; }
   .mclock, .mmusic { padding: 10px; overflow: hidden; }
   .mclock .t { font-size: 1.6rem; }
   .mclock .w span:last-child, .mmusic .art, .mbanner span { display: none; }
-  .mbanner { right: 46px; padding: 6px; }
+  .mbanner { max-width: 70%; padding: 6px; }
   .mbanner .turn { width: 30px; height: 30px; }
   .mbanner b { font-size: .95rem; }
   .mmusic .row { gap: 8px; }
