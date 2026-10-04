@@ -41,6 +41,7 @@
         <li><a href="#install">Download</a></li>
         <li><a href="guide.html">User guide</a></li>
         <li><a href="#faq">FAQ</a></li>
+        <li><a href="#support">Support</a></li>
       </ul>
       <button class="iconbtn" id="theme-btn" type="button" aria-label="Switch between dark and light theme" title="Dark / light">
         <svg class="ic moon" aria-hidden="true"><use href="assets/icons.svg#i-moon"/></svg>
@@ -130,7 +131,7 @@
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-clock"/></svg></span>Clock and weather</h3>
         <p>A big light clock, the date, live weather with the day's high and low, and your next calendar event with its time and length. A small gauge shows battery, Wi-Fi and mobile signal.</p></article>
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-music"/></svg></span>Music</h3>
-        <p>Shows what is playing in any music app: cover art, title, progress you can drag, previous, play and next, and a like button when the app supports it. The accent colour can follow the album cover.</p></article>
+        <p>Shows what is playing in any music app: cover art, title, progress you can drag, previous, play and next, and a like button when the app supports it. Small music bars next to the title can follow the beat of the song, and the accent colour can follow the album cover.</p></article>
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-map"/></svg></span>Live map</h3>
         <p>Google's map with 3D buildings and live traffic follows your car. It zooms out as you speed up, tilts when you drive, and you can pinch, drag and snap back to your position.</p></article>
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-route"/></svg></span>Navigation</h3>
@@ -232,14 +233,44 @@
     <details class="faq glass reveal"><summary>Why does the app use the package name com.baidu.searchbox?</summary><div class="a"><p>The car only lists apps it knows. Xiaomi Cockpit uses a package name the car already accepts so it can appear on the car screen. The side effect is that it cannot be on the real Baidu app's phone at the same time: if the real Baidu app is installed, Android refuses the install with a "conflicting signatures" message. Uninstall the Baidu app first.</p></div></details>
     <details class="faq glass reveal"><summary>Do I need a Google API key?</summary><div class="a"><p>Not to see the map. The live Google map is built in. The key is needed for routes, destination search and traffic times, so Home, Work and "Set destination" work. Google gives a free monthly allowance, and the key stays on your phone. See <a href="guide.html#google-key">the guide</a>.</p></div></details>
     <details class="faq glass reveal"><summary>The floating button does not bring the cockpit back</summary><div class="a"><p>Tap it once and wait about two seconds. Make sure <b>Display over other apps</b> is allowed and <b>Autostart</b> is on for the app. More tips are in the <a href="guide.html#troubleshooting">troubleshooting section</a>.</p></div></details>
+    <details class="faq glass reveal"><summary>Something does not work. How do I report it?</summary><div class="a"><p>Open <b>Settings &gt; Support &gt; Report a problem</b> in the app, describe the problem and add screenshots. It opens a public report you can follow, and the screenshots and full log stay private. See <a href="#support">Support</a>.</p></div></details>
     <details class="faq glass reveal"><summary>Is it made by Xiaomi?</summary><div class="a"><p>No. It is an independent community project and is not affiliated with Xiaomi, Baidu or Google. Names and trademarks belong to their owners.</p></div></details>
+  </section>
+
+  <!-- support -->
+  <section id="support">
+    <div class="sec-head reveal">
+      <p class="tiny">Support</p>
+      <h2>Found a problem? Report it from inside the app</h2>
+      <p>No account and no typing of logs by hand: describe what went wrong, add screenshots and the app sends everything the developer needs. You can follow your report on GitHub afterwards.</p>
+    </div>
+    <div class="grid f2">
+      <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-wrench"/></svg></span>How to report</h3>
+        <ul>
+          <li>Swipe down on the dashboard and tap the gear to open the settings.</li>
+          <li>Under <b>Support</b>, tap <b>Report a problem</b>.</li>
+          <li>Describe what happened, add screenshots and keep <b>Include the app log</b> on.</li>
+          <li>Check the preview and tap <b>Send</b>. You get a report number and a link to follow it.</li>
+        </ul></article>
+      <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-shield"/></svg></span>What is shared</h3>
+        <ul>
+          <li><b>Public:</b> your description, the app and phone details and the last lines of the log.</li>
+          <li><b>Private:</b> the screenshots and the full log. Only the developer can open them.</li>
+          <li><b>Removed first:</b> your Google key, Home and Work addresses, positions and e-mail addresses.</li>
+          <li>You see the public text before sending, and nothing leaves the phone until you tap <b>Send</b>.</li>
+        </ul></article>
+    </div>
+    <div class="reveal" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:22px">
+      <a class="btn ghost glass" href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/issues"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-alert"/></svg>See reported problems</a>
+      <a class="btn ghost glass" href="guide.html#report"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-book"/></svg>Read how it works</a>
+    </div>
   </section>
 </div>
 </main>
 
 <footer>
   <div class="wrap">
-    <div class="links"><a href="guide.html">User guide</a><a href="#install">Download</a><a href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases">All versions</a></div>
+    <div class="links"><a href="guide.html">User guide</a><a href="#install">Download</a><a href="#support">Report a problem</a><a href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases">All versions</a></div>
     <p>Xiaomi Cockpit is an independent community project. It is not affiliated with, endorsed by or sponsored by Xiaomi, Baidu or Google. All names and trademarks belong to their owners.</p>
     <p>Map data and routes come from Google Maps Platform; weather comes from Open-Meteo.</p>
   </div>

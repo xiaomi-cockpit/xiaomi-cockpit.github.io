@@ -70,6 +70,7 @@
       <a href="#settings">Settings, one by one</a>
       <a href="#look">Looks and themes</a>
       <a href="#troubleshooting">Troubleshooting</a>
+      <a href="#report">Report a problem</a>
       <a href="#updates">Updating</a>
     </div>
   </aside>
@@ -155,6 +156,7 @@
       <li><b>Like button:</b> if the playing app offers a like (for example YouTube Music), a heart takes the place of the previous button. Tap to like or unlike. You can turn this off in the settings.</li>
       <li><b>Progress bar:</b> the larger layouts show the elapsed time, the length and a bar you can drag to jump in the song.</li>
       <li><b>Play when connected:</b> optionally start playing by itself when the car connects (<b>Settings &gt; Look and behaviour</b>).</li>
+      <li><b>Music bars:</b> five small bars next to the title (between the title and the buttons in the phone layout) move while a song plays and rest when it is paused. By default they move on their own. Switch on <b>Settings &gt; Look and behaviour &gt; Visualizer follows the music</b> and they follow the real sound: the bass and the drums on the left, the treble on the right. This needs the audio permission, which the phone asks for when you switch it on. The app only measures how loud the music is; nothing is recorded or saved. Some phones or music apps give no sound data; then the bars keep their own movement (<b>Settings &gt; Diagnostics &gt; Visualizer</b> shows what happens).</li>
       <li>With the <i>Album art</i> accent, the colours of the app follow the cover of the current song.</li>
     </ul>
     <div class="tip"><p><b>Nothing shows?</b> The music card needs <b>Music and navigation access</b>. Check that it says <i>Allowed</i> in the setup screen.</p></div>
@@ -227,6 +229,7 @@
       <tr><td><b>Maps</b></td><td>Map service (Google API or Custom Maps App), the Google key and its status, a guide to get a key, <b>Home</b> and <b>Work</b>, and <b>3D buildings</b>. With a custom maps app: which app to use.</td></tr>
       <tr><td><b>Dashboard apps</b></td><td>Choose the dock apps, and the default music, clock, calendar and weather apps (Automatic works for most people).</td></tr>
       <tr><td><b>Look and behaviour</b></td><td>Theme, background, animated background, accent colour, glass effects, music options, floating button options and language. See <a href="#look">Looks and themes</a>.</td></tr>
+      <tr><td><b>Support</b></td><td><b>Report a problem</b>: send a description, screenshots and the app log. See <a href="#report">Report a problem</a>.</td></tr>
       <tr><td><b>Diagnostics</b></td><td>Technical details such as the package name, the screen number and the state of the map and route services. Useful when asking for help.</td></tr>
     </table></div>
 
@@ -239,7 +242,7 @@
       <li><b>Accent colour:</b> Mint, Sky, Violet, Pink, Orange, Yellow, Red, Lime, a custom colour, or <i>Album art</i> to follow the song.</li>
       <li><b>Glass edge refraction</b> (Android 13 and newer): the rim of each panel picks up the light and colours behind it.</li>
       <li><b>Glass shadow:</b> a soft shadow under the bottom edge of the panels.</li>
-      <li><b>Like button in music controls</b>, <b>Play music when connected to car</b>, <b>Show app names under shortcuts</b>.</li>
+      <li><b>Like button in music controls</b>, <b>Visualizer follows the music</b>, <b>Play music when connected to car</b>, <b>Show app names under shortcuts</b>.</li>
       <li><b>Language:</b> English, Khmer, Russian or Polish.</li>
     </ul>
 
@@ -253,7 +256,27 @@
     <details class="faq glass"><summary>Home, Work or "Set destination" asks for a Google key</summary><div class="a"><p>These need your own key. Follow <a href="#google-key">Get a Google key</a>. If Check reports a problem, fix the item it names (usually turning on one of the three APIs or adding a billing account).</p></div></details>
     <details class="faq glass"><summary>"Finding the route…" never finishes</summary><div class="a"><p>Check the internet connection on the phone and the key status in <b>Settings &gt; Maps</b>. Press <b>Check</b> again to see which service fails.</p></div></details>
     <details class="faq glass"><summary>The weather is empty</summary><div class="a"><p>Choose your city in <b>Settings &gt; Weather</b>, and check the phone has internet.</p></div></details>
+    <details class="faq glass"><summary>Something else is wrong, or it still does not work</summary><div class="a"><p>Use <a href="#report">Report a problem</a> in the settings. Add a screenshot and keep the log on, then it is much easier to find the cause.</p></div></details>
     <details class="faq glass"><summary>The layout looks too big or too small on the car</summary><div class="a"><p>The app scales each car layout so it matches the phone. If it still looks off on your car, send a photo of the screen and the car model so it can be tuned.</p></div></details>
+
+    <!-- ===== report ===== -->
+    <h2 id="report">Report a problem</h2>
+    <p>If something does not work, you can tell the developer from inside the app. You do not need a GitHub account.</p>
+    <ol>
+      <li>Open the settings (swipe down on the dashboard, tap the gear) and find <b>Support</b>.</li>
+      <li>Tap <b>Write</b> next to <b>Report a problem</b>.</li>
+      <li>Describe what went wrong and what you expected. Add up to three screenshots from your gallery with <b>Add</b>. Keep <b>Include the app log</b> on: it helps a lot. If the app crashed, the crash is included automatically.</li>
+      <li>Tap <b>Review</b>. The next screen shows exactly what will be public. Scroll it to read everything.</li>
+      <li>Tap <b>Send</b>. You get a report number and an <b>Open on GitHub</b> button.</li>
+    </ol>
+    <h3 id="report-privacy">What is public and what is private</h3>
+    <ul>
+      <li><b>Public:</b> your description, the app version, the phone model and Android version, which layout was used, the state of the map and route services, and the last lines of the app log. Everyone can read this on the <a href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/issues">public list of reports</a>.</li>
+      <li><b>Private:</b> your screenshots and the full log. Only the developer can open them.</li>
+      <li><b>Removed before sending:</b> your Google key, the Home and Work addresses, positions and e-mail addresses. Screenshots are not edited, so avoid showing personal details in them.</li>
+      <li>One report per minute can be sent. If sending fails (no internet, for example), the app offers to share the text through your phone's share sheet instead.</li>
+    </ul>
+    <div class="tip"><p><b>Following your report:</b> open the link from the <i>Open on GitHub</i> button, or look for the number on the <a href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/issues">reports page</a>. Answers and the fix are written there, and the fixed version is listed in the release notes.</p></div>
 
     <!-- ===== updates ===== -->
     <h2 id="updates">Updating</h2>
@@ -265,7 +288,7 @@
 
 <footer>
   <div class="wrap">
-    <div class="links"><a href="./">Home</a><a href="./#install">Download</a><a href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases">All versions</a></div>
+    <div class="links"><a href="./">Home</a><a href="./#install">Download</a><a href="./#support">Report a problem</a><a href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases">All versions</a></div>
     <p>Xiaomi Cockpit is an independent community project. It is not affiliated with, endorsed by or sponsored by Xiaomi, Baidu or Google. All names and trademarks belong to their owners.</p>
   </div>
 </footer>
