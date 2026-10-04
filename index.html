@@ -129,13 +129,17 @@
     </div>
     <div class="grid f3">
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-clock"/></svg></span>Clock and weather</h3>
-        <p>A big light clock, the date, live weather with the day's high and low, and your next calendar event with its time and length. A small gauge shows battery, Wi-Fi and mobile signal.</p></article>
+        <p>A big light clock, the date, live weather with the day's high and low, and your next calendar event with its time and length. A small gauge shows battery, Wi-Fi and mobile signal. Weather comes from Google Weather or free Open-Meteo, your choice.</p></article>
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-music"/></svg></span>Music</h3>
         <p>Shows what is playing in any music app: cover art, title, progress you can drag, previous, play and next, and a like button when the app supports it. Small music bars next to the title can follow the beat of the song, and the accent colour can follow the album cover.</p></article>
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-map"/></svg></span>Live map</h3>
         <p>Google's map with 3D buildings and live traffic follows your car. It zooms out as you speed up, tilts when you drive, and you can pinch, drag and snap back to your position.</p></article>
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-route"/></svg></span>Navigation</h3>
-        <p>Pick Home, Work, search a place or choose a spot on the map. See the route coloured by traffic, a turn-by-turn banner with the street name, time left and arrival time, with automatic re-routing.</p></article>
+        <p>Pick Home, Work, search a place or choose a spot on the map. A new route first shows the whole way, then zooms in as you start driving. See the route coloured by live traffic, a turn-by-turn banner with the street name, time left and arrival time, with fast automatic re-routing.</p></article>
+      <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-weather"/></svg></span>Weather you can see</h3>
+        <p>A sky in the clock card, rain that runs down the glass in drops, snow that piles up on the cards and storms with lightning. In gloomy weather the light theme turns gloomy too, and at night it switches to dark by itself. Switch it off in the settings if you prefer a plain look.</p></article>
+      <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-bolt"/></svg></span>Nearby EV chargers</h3>
+        <p>Tap the bolt on the map and the cockpit finds chargers around you, the quickest to reach first. Step through them with the arrows, see the way on the map with power and connector types, and tap Go to start the route.</p></article>
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-apps"/></svg></span>App dock</h3>
         <p>Your favourite apps one tap away, opened on the car screen. Tap the all-apps button to see every app, search them, and long-press to change the shortcuts.</p></article>
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-gauge"/></svg></span>Floating return button</h3>
@@ -146,6 +150,8 @@
         <p>One layout for the phone and two for the car: a compact landscape and a roomy full screen. Sizes are scaled so buttons and text look the same on each.</p></article>
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-globe"/></svg></span>Your language</h3>
         <p>English, Khmer, Russian and Polish, including dates, units, the map and the turn-by-turn directions. More can be added.</p></article>
+      <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-wrench"/></svg></span>Report and request</h3>
+        <p>Something wrong, or an idea? Send a report or a feature request from the settings in a few taps, with screenshots and the log. You can follow it on GitHub afterwards.</p></article>
     </div>
   </section>
 
@@ -208,20 +214,20 @@
           <li>The real Baidu app must not be installed on the phone (see the FAQ).</li>
         </ul></div>
       <div class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-key"/></svg></span>Optional: a Google key</h3>
-        <p>The live map works right away. For routes, destination search and traffic times you add your own free Google API key. The guide shows every click.</p>
+        <p>The live map works right away. For routes, destination search, traffic times, chargers and Google Weather you add your own Google API key once in the settings. Weather works without it too. The guide shows every click.</p>
         <p style="margin-top:.6em"><a href="guide.html#google-key">How to get a key</a></p></div>
     </div>
 
     <ol class="steps" style="list-style:none;margin:0;padding:0">
       <li class="step glass reveal"><span class="n"></span><div><h3>Download the APK on your phone</h3><p>Tap the download button above in your phone's browser. If your browser warns that this type of file can be harmful, choose to keep it. It is an app file that does not come from a store.</p></div></li>
       <li class="step glass reveal"><span class="n"></span><div><h3>Install it</h3><p>Open the downloaded file. Android asks you to allow installing apps from this source: allow it, then tap Install. If Play Protect asks, choose <b>Install anyway</b>. Installing a newer version over an old one keeps your settings.</p></div></li>
-      <li class="step glass reveal"><span class="n"></span><div><h3>Open the app and choose your language</h3><p>The first start asks for a language and then opens the setup screen.</p></div></li>
+      <li class="step glass reveal"><span class="n"></span><div><h3>Open the app and choose your language</h3><p>The first start asks for a language and for your map service (Google API or a maps app of your own), and then opens the setup screen. You can change both later in the settings.</p></div></li>
       <li class="step glass reveal"><span class="n"></span><div><h3>Allow what the app needs</h3>
         <p>On the setup screen tap each row and allow it:</p>
         <ul><li><b>Display over other apps</b>: for the floating return button.</li><li><b>Music and navigation access</b>: so the app can show what is playing.</li><li><b>Notifications</b>, <b>Location</b> (speed and map) and <b>Calendar</b> (next event).</li></ul>
         <p>If a switch is greyed out, open <b>App info</b>, tap the three-dot menu and choose <b>Unlock permissions</b>, then try again. On HyperOS also turn on <b>Autostart</b>, set <b>Battery saver</b> to <b>No restrictions</b>, and allow <b>Display pop-up windows</b> and <b>Chain start</b>.</p></div></li>
       <li class="step glass reveal"><span class="n"></span><div><h3>Connect to the car</h3><p>Connect your phone to the car with Xiaomi interconnectivity (required for the car screen) and open Xiaomi Cockpit from the app list on the car screen, or pin it to the car's home screen. The dashboard fits the window it is shown in.</p></div></li>
-      <li class="step glass reveal"><span class="n"></span><div><h3>Set your city and your places</h3><p>Open the settings (swipe down on the dashboard and tap the gear). Choose your city for the weather, set <b>Home</b> and <b>Work</b>, and pick your dock apps. The <a href="guide.html">user guide</a> explains every setting.</p></div></li>
+      <li class="step glass reveal"><span class="n"></span><div><h3>Set your city and your places</h3><p>Open the settings (swipe down on the dashboard and tap the gear). Add your Google key if you have one, choose your city for the weather, set <b>Home</b> and <b>Work</b>, and pick your dock apps. The <a href="guide.html">user guide</a> explains every setting.</p></div></li>
     </ol>
   </section>
 
@@ -231,9 +237,10 @@
     <details class="faq glass reveal"><summary>Does it work without Xiaomi interconnectivity?</summary><div class="a"><p>Only on the phone. Without interconnectivity the app can be opened on your phone, but it cannot be shown on the car screen. To use it in the car you need a supported Xiaomi phone in the Chinese region that can connect to the car with Xiaomi interconnectivity.</p></div></details>
     <details class="faq glass reveal"><summary>Is it free? Is there an account or advertising?</summary><div class="a"><p>It is free, community built, and has no account and no advertising.</p></div></details>
     <details class="faq glass reveal"><summary>Why does the app use the package name com.baidu.searchbox?</summary><div class="a"><p>The car only lists apps it knows. Xiaomi Cockpit uses a package name the car already accepts so it can appear on the car screen. The side effect is that it cannot be on the real Baidu app's phone at the same time: if the real Baidu app is installed, Android refuses the install with a "conflicting signatures" message. Uninstall the Baidu app first.</p></div></details>
-    <details class="faq glass reveal"><summary>Do I need a Google API key?</summary><div class="a"><p>Not to see the map. The live Google map is built in. The key is needed for routes, destination search and traffic times, so Home, Work and "Set destination" work. Google gives a free monthly allowance, and the key stays on your phone. See <a href="guide.html#google-key">the guide</a>.</p></div></details>
+    <details class="faq glass reveal"><summary>Do I need a Google API key?</summary><div class="a"><p>Not to see the map. The live Google map is built in. The key is needed for routes, destination search and traffic times (so Home, Work and "Set destination" work), for the nearby chargers' details and for Google Weather. Without it weather comes from Open-Meteo and chargers from OpenStreetMap. Google gives a free monthly allowance, and the key stays on your phone. See <a href="guide.html#google-key">the guide</a>.</p></div></details>
     <details class="faq glass reveal"><summary>The floating button does not bring the cockpit back</summary><div class="a"><p>Tap it once and wait about two seconds. Make sure <b>Display over other apps</b> is allowed and <b>Autostart</b> is on for the app. More tips are in the <a href="guide.html#troubleshooting">troubleshooting section</a>.</p></div></details>
     <details class="faq glass reveal"><summary>Something does not work. How do I report it?</summary><div class="a"><p>Open <b>Settings &gt; Support &gt; Report a problem</b> in the app, describe the problem and add screenshots. It opens a public report you can follow, and the screenshots and full log stay private. See <a href="#support">Support</a>.</p></div></details>
+    <details class="faq glass reveal"><summary>Can I ask for a new feature?</summary><div class="a"><p>Yes. Open <b>Settings &gt; Support &gt; Request a feature</b> in the app and describe your idea. It opens a public request you can follow.</p></div></details>
     <details class="faq glass reveal"><summary>Is it made by Xiaomi?</summary><div class="a"><p>No. It is an independent community project and is not affiliated with Xiaomi, Baidu or Google. Names and trademarks belong to their owners.</p></div></details>
   </section>
 

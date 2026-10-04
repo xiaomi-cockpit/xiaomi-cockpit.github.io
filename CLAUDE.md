@@ -29,3 +29,7 @@ Showcase the app: features, download + install instructions, a detailed user gui
 
 ## Testing
 No local build needed. To look at the pages: `python3 -m http.server`, then headless Chromium (`/opt/pw-browsers/chromium-*/chrome-linux/chrome --headless=new --no-sandbox --screenshot=out.png --window-size=1440,2000 --virtual-time-budget=5000 URL?theme=light`). Headless Chromium has a minimum window width of about 500 px; check phones through an iframe of 390 px.
+
+## Update (v1.3.0 content)
+- index.html: new feature cards (Weather you can see, Nearby EV chargers, Report and request; icon `i-bolt` added to the sprite), updated Clock/weather and Navigation cards, Google key card/FAQ (chargers, Google Weather), first-start step (language + map service), new FAQ "Can I ask for a new feature?".
+- guide.html: sections Weather effects (#weather-fx) and Nearby chargers (#chargers), route overview + live traffic update, one Google key (Settings > Google key, four services incl. Weather API), weather source/frequency, Home/Work/Search buttons, settings table, Report/Request captions.

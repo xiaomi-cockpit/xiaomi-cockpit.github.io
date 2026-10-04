@@ -60,11 +60,13 @@
       <a href="#layouts">The three layouts</a>
       <a href="#gestures">Gestures</a>
       <a href="#clock">Clock and weather</a>
+      <a class="sub" href="#weather-fx">Weather effects</a>
       <a href="#music">Music</a>
       <a href="#map">Map and navigation</a>
       <a class="sub" href="#google-key">Get a Google key</a>
       <a class="sub" href="#route">Set a destination</a>
       <a class="sub" href="#banner">The turn banner</a>
+      <a class="sub" href="#chargers">Nearby chargers</a>
       <a href="#dock">The app dock</a>
       <a href="#floating">Floating return button</a>
       <a href="#settings">Settings, one by one</a>
@@ -143,9 +145,17 @@
     <h2 id="clock">Clock and weather</h2>
     <p>The clock card shows the time in large light digits, the date on two lines, and the weather on the right: the temperature and an icon, the condition, your city and the day's high and low.</p>
     <ul>
-      <li><b>Weather</b> comes from Open-Meteo and refreshes about every 30 minutes. Pick your city in <b>Settings &gt; Weather</b>: type a name, tap search and choose from the list.</li>
+      <li><b>Weather</b> comes from <b>Google Weather</b> (when your Google key works for it) or from free <b>Open-Meteo</b>. Pick your city in <b>Settings &gt; Weather</b>: type a name, tap search and choose from the list. There you also choose the <b>Weather source</b> (Automatic, Open-Meteo or Google Weather) and the <b>Update frequency</b> (every 15 minutes to every 3 hours, 30 minutes by default). Automatic uses Google when it works and Open-Meteo otherwise; if Google does not answer, a note under the row says why.</li>
       <li><b>Next event</b> (bottom left) shows the date and time, how long it lasts, and its title. It needs the Calendar permission. When there is not much room, the length is left out.</li>
       <li><b>Status gauge</b> (top right): the ring is the battery level, the Wi-Fi symbol inside shows Wi-Fi strength and the dots under it show mobile signal.</li>
+    </ul>
+
+    <h3 id="weather-fx">Weather effects</h3>
+    <p>The dashboard shows the weather as well as telling it. The clock card has a sky with clouds that follow the condition (clear, partly cloudy, overcast, fog, rain, snow, storm). Rain falls over the whole dashboard, splashes on the top edge of the cards, and small drops form on the clock card, merge and run down the glass, bending the text behind them. Snow piles up on the top edges of the cards and the dock. Thunderstorms add lightning that flashes across the screen.</p>
+    <ul>
+      <li>In the <b>light theme</b>, gloomy weather darkens the whole interface and switches the live map to its night style. At <b>night</b> the app switches to the dark theme by itself.</li>
+      <li>Switch everything off with <b>Settings &gt; Look and behaviour &gt; Weather effects</b>. Then the theme stays as you chose it.</li>
+      <li>Rain and snow only show when your city is set and the weather data is there.</li>
     </ul>
 
     <!-- ===== music ===== -->
@@ -165,9 +175,10 @@
     <h2 id="map">Map and navigation</h2>
     <p>The map is Google's own live map, with 3D buildings and traffic, following your car. As you speed up it zooms out smoothly; while you drive it tilts into a driving view.</p>
     <ul>
-      <li><b>Car button:</b> switches between the tilted driving view and a flat map.</li>
+      <li><b>Driving view:</b> always on. The map tilts into 3D by itself once the car moves.</li>
       <li><b>Compass button:</b> after you drag or pinch the map, this brings it back to your position.</li>
-      <li><b>Home and Work</b> buttons start a route to the places you saved. <b>Set destination</b> (or the magnifier in landscape) lets you search anywhere.</li>
+      <li><b>Home, Work and Search</b> are the three round buttons at the top left. Home and Work start a route to the places you saved, and the magnifier lets you search anywhere. While a route runs, Home and Work go away and the magnifier becomes an <b>✕</b> (end route) next to the charger button.</li>
+      <li><b>Bolt button</b> (top right): finds nearby EV chargers, see <a href="#chargers">Nearby chargers</a>.</li>
     </ul>
     <p>You can choose how navigation works in <b>Settings &gt; Maps &gt; Map service</b>:</p>
     <ul>
@@ -176,15 +187,15 @@
     </ul>
 
     <h3 id="google-key">Get a Google key</h3>
-    <p>Routes, destination search and traffic times use <b>your own</b> Google API key, so you never use anyone else's allowance. Google gives a free monthly allowance, and the key stays on your phone. The live map works without it.</p>
+    <p>Routes, destination search, traffic times, the chargers' details and Google Weather use <b>your own</b> Google API key, so you never use anyone else's allowance. One key does it all. Google gives a free monthly allowance, and the key stays on your phone. The live map, Open-Meteo weather and OpenStreetMap chargers work without it. Pricing and allowances are Google's and can change, so check them in Google Cloud.</p>
     <ol>
       <li>Open <code>console.cloud.google.com</code> and sign in.</li>
       <li>Create a project and add a billing account (Google asks for a card, but the free monthly allowance is large).</li>
-      <li>In <b>APIs &amp; Services &gt; Library</b>, turn on <b>Routes API</b>, <b>Places API (New)</b> and <b>Map Tiles API</b>.</li>
+      <li>In <b>APIs &amp; Services &gt; Library</b>, turn on <b>Routes API</b>, <b>Places API (New)</b>, <b>Map Tiles API</b> and <b>Weather API</b>.</li>
       <li>In <b>APIs &amp; Services &gt; Credentials</b>, create an <b>API key</b> and copy it.</li>
-      <li>In the app open <b>Settings &gt; Maps &gt; Google key &gt; Add key</b>, paste the key and tap <b>Check</b>.</li>
+      <li>In the app open <b>Settings &gt; Google key &gt; Add key</b> (the section sits right under Setup), paste the key and tap <b>Check</b>.</li>
     </ol>
-    <p><b>Check</b> tries the three services with your key. If all work, the button becomes <b>Save</b>. If something fails, the app tells you which one and what to fix (for example "Not turned on: press Enable in Google Cloud"). You can also choose <b>Save anyway</b>. The status row shows <i>Valid</i>, <i>Needs fixing</i> or <i>Not added</i>.</p>
+    <p><b>Check</b> tries the four services with your key. If all work, the button becomes <b>Save</b>. If something fails, the app tells you which one and what to fix (for example "Not turned on: press Enable in Google Cloud"). You can also choose <b>Save anyway</b>. The status row shows <i>Valid</i>, <i>Needs fixing</i> or <i>Not added</i>.</p>
     <div class="tip"><p><b>Tip.</b> If you restrict the key to Android apps in Google Cloud, enter the app's package name and its SHA-1 fingerprint. A key without restrictions is simpler but anyone who gets it can use it, so keep it private.</p></div>
 
     <h3 id="route">Set a destination</h3>
@@ -196,8 +207,20 @@
     </ol>
     <p>To set <b>Home</b> and <b>Work</b>, open <b>Settings &gt; Maps</b> and tap the row. You can <b>pick on the map</b>, <b>paste a map link</b> (from Google Maps, Apple Maps, Waze, Amap, OpenStreetMap and others), <b>type an address</b>, or clear it. A spot picked on the map is exact.</p>
 
+    <p><b>Route overview.</b> When you set a destination while the car stands still, the map first zooms out to show the whole way, clear of the turn banner. It zooms in and follows you once you start driving (8 km/h or more) or when you touch the map. Re-routing does not zoom out again. <b>Settings &gt; Maps &gt; Live traffic update</b> chooses how often the route's traffic colours and arrival time refresh (every 15 seconds, 30 seconds by default, 1 minute or 2 minutes); each refresh is one route request to Google, so a faster setting uses more of your free allowance. If you leave the route, the app finds a new one within a few seconds.</p>
+
     <h3 id="banner">The turn banner</h3>
     <p>While you drive a route, a glass banner at the top of the map shows the distance to the next turn in large figures, the instruction with the street name in bold (roundabouts and U-turns have their own symbols), and a small line with the arrival time, the time left and the distance left. A round bubble in the corner shows the minutes left. If you leave the route, the app finds a new one by itself.</p>
+
+    <h3 id="chargers">Nearby chargers</h3>
+    <p>Tap the <b>bolt</b> button at the top right of the live map (Google's map). The button grows into a small card, the other buttons step aside and the map moves so you and the charger you are looking at stay clear of the card.</p>
+    <ul>
+      <li>The chargers within about 15 km (50 km if there are fewer than three) are listed with the <b>quickest to reach first</b>. The card shows the name, the distance and drive time, the power in kW, the connector types and the address.</li>
+      <li>The <b>arrows</b> step through the chargers. The map zooms to show you, the charger and the blue route between, and the other chargers as small dots.</li>
+      <li><b>Go</b> starts the route to that charger and the card shrinks back into the button. <b>✕</b> closes it without a route.</li>
+      <li>With your Google key the list comes from Google Places with connector types and power; without a key it comes from OpenStreetMap, which has less detail.</li>
+      <li>With a <i>Custom Maps App</i> the charger is opened in that app.</li>
+    </ul>
 
     <!-- ===== dock ===== -->
     <h2 id="dock">The app dock</h2>
@@ -225,11 +248,12 @@
     <div class="tablewrap"><table>
       <tr><th>Section</th><th>What is in it</th></tr>
       <tr><td><b>Setup</b></td><td>Every permission and its state, and a shortcut to App info. See <a href="#permissions">Allow what it needs</a>.</td></tr>
-      <tr><td><b>Weather</b></td><td>Search and choose your city.</td></tr>
-      <tr><td><b>Maps</b></td><td>Map service (Google API or Custom Maps App), the Google key and its status, a guide to get a key, <b>Home</b> and <b>Work</b>, and <b>3D buildings</b>. With a custom maps app: which app to use.</td></tr>
+      <tr><td><b>Google key</b></td><td>Your Google key and its status (<i>Valid</i>, <i>Needs fixing</i>, <i>Not added</i>), add or edit it, and a guide to get one. One key serves routes, search, chargers, map tiles and weather. See <a href="#google-key">Get a Google key</a>.</td></tr>
+      <tr><td><b>Weather</b></td><td>Search and choose your city, the <b>Weather source</b> and the <b>Update frequency</b>.</td></tr>
+      <tr><td><b>Maps</b></td><td>Map service (Google API or Custom Maps App; you choose it on the first start), <b>Live traffic update</b>, <b>Home</b> and <b>Work</b>, and <b>3D buildings</b>. With a custom maps app: which app to use.</td></tr>
       <tr><td><b>Dashboard apps</b></td><td>Choose the dock apps, and the default music, clock, calendar and weather apps (Automatic works for most people).</td></tr>
       <tr><td><b>Look and behaviour</b></td><td>Theme, background, animated background, accent colour, glass effects, music options, floating button options and language. See <a href="#look">Looks and themes</a>.</td></tr>
-      <tr><td><b>Support</b></td><td><b>Report a problem</b>: send a description, screenshots and the app log. See <a href="#report">Report a problem</a>.</td></tr>
+      <tr><td><b>Support</b></td><td><b>Report a problem</b> and <b>Request a feature</b>: send a description, screenshots and the app log. See <a href="#report">Report a problem</a>.</td></tr>
       <tr><td><b>Diagnostics</b></td><td>Technical details such as the package name, the screen number and the state of the map and route services. Useful when asking for help.</td></tr>
     </table></div>
 
@@ -242,6 +266,7 @@
       <li><b>Accent colour:</b> Mint, Sky, Violet, Pink, Orange, Yellow, Red, Lime, a custom colour, or <i>Album art</i> to follow the song.</li>
       <li><b>Glass edge refraction</b> (Android 13 and newer): the rim of each panel picks up the light and colours behind it.</li>
       <li><b>Glass shadow:</b> a soft shadow under the bottom edge of the panels.</li>
+      <li><b>Weather effects:</b> the sky, rain, snow and lightning, and the gloomy light theme with the automatic dark theme at night.</li>
       <li><b>Like button in music controls</b>, <b>Visualizer follows the music</b>, <b>Play music when connected to car</b>, <b>Show app names under shortcuts</b>.</li>
       <li><b>Language:</b> English, Khmer, Russian or Polish.</li>
     </ul>
@@ -264,7 +289,7 @@
     <p>If something does not work, you can tell the developer from inside the app. You do not need a GitHub account.</p>
     <ol>
       <li>Open the settings (swipe down on the dashboard, tap the gear) and find <b>Support</b>.</li>
-      <li>Tap <b>Write</b> next to <b>Report a problem</b>.</li>
+      <li>Tap <b>Report</b> next to <b>Report a problem</b>. For an idea, tap <b>Request</b> next to <b>Request a feature</b> instead; it works the same way.</li>
       <li>Describe what went wrong and what you expected. Add up to three screenshots from your gallery with <b>Add</b>. Keep <b>Include the app log</b> on: it helps a lot. If the app crashed, the crash is included automatically.</li>
       <li>Tap <b>Review</b>. The next screen shows exactly what will be public. Scroll it to read everything.</li>
       <li>Tap <b>Send</b>. You get a report number and an <b>Open on GitHub</b> button.</li>
