@@ -67,11 +67,17 @@
   ];
   var bpos = []; /* current bubble centres and radii in CSS pixels (for the edge glow) */
 
+  var lastT = 3;
   function resize() {
     if (!cv) return;
-    W = Math.max(1, Math.round(window.innerWidth * SCALE));
-    H = Math.max(1, Math.round(window.innerHeight * SCALE));
+    var nw = Math.max(1, Math.round(window.innerWidth * SCALE));
+    var nh = Math.max(1, Math.round(window.innerHeight * SCALE));
+    /* Phones change the window height all the time (address bar, pull to refresh). Resetting the canvas then clears it
+       for a moment (a black flash), so a small height change just stretches the canvas a little. */
+    if (W && nw === W && Math.abs(nh - H) < H * 0.3) return;
+    W = nw; H = nh;
     cv.width = W; cv.height = H;
+    draw(lastT);
   }
   function mix(c, to, f) { return [c[0] + (to[0] - c[0]) * f, c[1] + (to[1] - c[1]) * f, c[2] + (to[2] - c[2]) * f]; }
   function rgba(c, a) { return "rgba(" + Math.round(c[0]) + "," + Math.round(c[1]) + "," + Math.round(c[2]) + "," + a + ")"; }
@@ -88,7 +94,8 @@
       accent.cur = mix(accent.from, accent.to, e);
       applyAccent(accent.cur);
     }
-    draw((now - t0) / 1000);
+    lastT = (now - t0) / 1000;
+    draw(lastT);
     updateGlow();
   }
   function draw(t) {
