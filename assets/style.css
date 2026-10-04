@@ -114,12 +114,12 @@ p { margin: 0 0 1em; }
 
 /* ---------- header ---------- */
 header.top { position: sticky; top: 12px; z-index: 50; padding-top: 12px; }
-.nav { display: flex; align-items: center; gap: 10px; padding: 8px 10px 8px 16px; border-radius: 999px; }
+.nav { display: flex; align-items: center; gap: 10px; padding: 8px 10px 8px 16px; border-radius: 22px; --r: 22px; }
 .brand { display: flex; align-items: center; gap: 10px; color: var(--text) !important; font-weight: 600; letter-spacing: -.01em; text-decoration: none !important; }
 .brand .mark { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; background: rgba(var(--accent-rgb), .2); color: var(--accent); }
 :root[data-theme="light"] .brand .mark { color: color-mix(in srgb, var(--accent) 75%, #10141c); }
 .nav ul { list-style: none; margin: 0 0 0 auto; padding: 0; display: flex; gap: 2px; }
-.nav li a { display: block; padding: 8px 14px; border-radius: 999px; color: var(--text); text-decoration: none; font-size: .95rem; }
+.nav li a { display: block; padding: 8px 14px; border-radius: 14px; color: var(--text); text-decoration: none; font-size: .95rem; }
 .nav li a:hover, .nav li a[aria-current="page"] { background: var(--chip); text-decoration: none; }
 .iconbtn { width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--chip); color: var(--text); display: grid; place-items: center; cursor: pointer; flex: none; }
 .iconbtn:hover { background: rgba(var(--accent-rgb), .22); }
