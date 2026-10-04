@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User guide · Xiaomi Cockpit</title>
+<meta name="description" content="The Xiaomi Cockpit user guide: install, set up permissions, use the clock, weather, music, map and navigation, the app dock, the floating button, every setting, and fixes for common problems.">
+<meta name="theme-color" content="#0a1621">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  (function () {
+    try {
+      var q = /[?&]theme=(light|dark)/.exec(location.search);
+      var t = q ? q[1] : localStorage.getItem("cockpit-theme");
+      if (t !== "light" && t !== "dark") t = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+
+<header class="top">
+  <div class="wrap">
+    <nav class="nav glass strong" aria-label="Main">
+      <a class="brand" href="./"><span class="mark"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-gauge"/></svg></span>Xiaomi Cockpit</a>
+      <ul>
+        <li><a href="./#features">Features</a></li>
+        <li><a href="./#screens">Screens</a></li>
+        <li><a href="./#install">Download</a></li>
+        <li><a href="guide.html" aria-current="page">User guide</a></li>
+        <li><a href="./#faq">FAQ</a></li>
+      </ul>
+      <button class="iconbtn" id="theme-btn" type="button" aria-label="Switch between dark and light theme" title="Dark / light">
+        <svg class="ic moon" aria-hidden="true"><use href="assets/icons.svg#i-moon"/></svg>
+        <svg class="ic sun" aria-hidden="true"><use href="assets/icons.svg#i-sun"/></svg>
+      </button>
+      <button class="iconbtn" id="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-menu"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap guide">
+
+  <aside class="toc glass" aria-label="Contents">
+    <span class="tiny">In this guide</span>
+    <div class="toc-list">
+      <a href="#start">Getting started</a>
+      <a class="sub" href="#install-app">Install the app</a>
+      <a class="sub" href="#permissions">Allow what it needs</a>
+      <a class="sub" href="#connect">Connect to the car</a>
+      <a href="#layouts">The three layouts</a>
+      <a href="#gestures">Gestures</a>
+      <a href="#clock">Clock and weather</a>
+      <a href="#music">Music</a>
+      <a href="#map">Map and navigation</a>
+      <a class="sub" href="#google-key">Get a Google key</a>
+      <a class="sub" href="#route">Set a destination</a>
+      <a class="sub" href="#banner">The turn banner</a>
+      <a href="#dock">The app dock</a>
+      <a href="#floating">Floating return button</a>
+      <a href="#settings">Settings, one by one</a>
+      <a href="#look">Looks and themes</a>
+      <a href="#troubleshooting">Troubleshooting</a>
+      <a href="#updates">Updating</a>
+    </div>
+  </aside>
+
+  <article class="doc glass">
+    <p class="tiny">User guide</p>
+    <h1>Using Xiaomi Cockpit</h1>
+    <p>This guide walks through the app from the first install to every setting. If you only want the short version, read <a href="#start">Getting started</a>; the rest is there when you need it.</p>
+
+    <!-- ===== start ===== -->
+    <h2 id="start">Getting started</h2>
+    <h3 id="install-app">Install the app</h3>
+    <ol>
+      <li>On your phone, download <a href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases/latest/download/Xiaomi-Cockpit.apk">Xiaomi-Cockpit.apk</a>.</li>
+      <li>Open the file. When Android asks to allow installing from your browser or file manager, allow it. If Play Protect warns about an unknown app, choose <b>Install anyway</b>.</li>
+      <li>Open <b>Xiaomi Cockpit</b>. Choose your language, then go through the setup screen.</li>
+    </ol>
+    <div class="tip"><p><b>Tip.</b> Installing a new version on top of the old one keeps all your settings. You never need to uninstall to update.</p></div>
+    <div class="tip"><p><b>If the install fails</b> with a message about conflicting signatures or an existing package, the real Baidu app (the one with the same package name) is on the phone. Uninstall it and install again.</p></div>
+
+    <h3 id="permissions">Allow what it needs</h3>
+    <p>The setup screen (and <b>Settings &gt; Setup</b>) lists what the app asks for. Each row shows <i>Allowed</i> or <i>Tap to allow</i>.</p>
+    <div class="tablewrap"><table>
+      <tr><th>Permission</th><th>What it is used for</th></tr>
+      <tr><td><b>Display over other apps</b></td><td>The floating return button on top of other apps.</td></tr>
+      <tr><td><b>Music and navigation access</b></td><td>Notification access, so the app can read what is playing and control it.</td></tr>
+      <tr><td><b>Notifications</b></td><td>A quiet notification that keeps the floating button alive.</td></tr>
+      <tr><td><b>Location (speed and map)</b></td><td>Your position for the live map, speed and navigation.</td></tr>
+      <tr><td><b>Calendar (next event)</b></td><td>The next event on the clock card.</td></tr>
+    </table></div>
+    <p><b>If a switch is greyed out:</b> open <b>App info</b> (the setup screen has a button for it), tap the three-dot menu at the top and choose <b>Unlock permissions</b>. HyperOS blocks some permissions for apps installed from a file until you do this.</p>
+    <p><b>Three more things in App info on HyperOS</b>, so the system does not stop the app:</p>
+    <ol><li>Turn on <b>Autostart</b>.</li><li>Set <b>Battery saver</b> to <b>No restrictions</b>.</li><li>Allow <b>Display pop-up windows</b> and <b>Chain start</b>.</li></ol>
+
+    <h3 id="connect">Connect to the car</h3>
+    <p>Connect your phone to the car with Xiaomi interconnectivity (the same Xiaomi account on the phone and in the car). Then open <b>Xiaomi Cockpit</b> from the app list on the car screen, or pin it to the car's home screen. The app draws itself to fit the space the car gives it, and redraws if you resize it.</p>
+    <p>The first time you launch another app from the dock, HyperOS may show a <b>Chain start</b> question on the phone. Choose <b>Always allow</b>.</p>
+
+    <!-- ===== layouts ===== -->
+    <h2 id="layouts">The three layouts</h2>
+    <ul>
+      <li><b>Phone and tall windows:</b> clock, live map, music and the app row stacked from top to bottom.</li>
+      <li><b>Compact car screen:</b> apps in a column on the left, music and clock side by side on top, the map as one wide box underneath.</li>
+      <li><b>Full car screen:</b> apps on the left, a big map in the middle, the clock above a full music player on the right.</li>
+    </ul>
+    <p>The layout is chosen automatically from the window's shape. Nothing scrolls, and sizes are scaled so that icons and text look the same size on the phone and on each car layout.</p>
+
+    <!-- ===== gestures ===== -->
+    <h2 id="gestures">Gestures</h2>
+    <div class="tablewrap"><table>
+      <tr><th>Do this</th><th>To get this</th></tr>
+      <tr><td>Swipe down on the dashboard (swipe left in the full car layout)</td><td>Everything slides away and the settings button appears. Swipe back to hide it. Once a day the button peeks out for a second to remind you.</td></tr>
+      <tr><td>Press and hold on an empty spot for about a second</td><td>The background picker opens. This does not work on the app dock or on the map.</td></tr>
+      <tr><td>Press and hold the all-apps button in the dock</td><td>Change which apps sit in the dock.</td></tr>
+      <tr><td>Pinch or drag the map</td><td>Zoom and move the map. A compass button appears to bring it back to your position.</td></tr>
+      <tr><td>Swipe down on an opened dock</td><td>Closes it (portrait layout).</td></tr>
+      <tr><td>Tap the cover, title or clock</td><td>Opens the music app, or the clock app. Tapping the weather opens your weather app.</td></tr>
+    </table></div>
+
+    <!-- ===== clock ===== -->
+    <h2 id="clock">Clock and weather</h2>
+    <p>The clock card shows the time in large light digits, the date on two lines, and the weather on the right: the temperature and an icon, the condition, your city and the day's high and low.</p>
+    <ul>
+      <li><b>Weather</b> comes from Open-Meteo and refreshes about every 30 minutes. Pick your city in <b>Settings &gt; Weather</b>: type a name, tap search and choose from the list.</li>
+      <li><b>Next event</b> (bottom left) shows the date and time, how long it lasts, and its title. It needs the Calendar permission. When there is not much room, the length is left out.</li>
+      <li><b>Status gauge</b> (top right): the ring is the battery level, the Wi-Fi symbol inside shows Wi-Fi strength and the dots under it show mobile signal.</li>
+    </ul>
+
+    <!-- ===== music ===== -->
+    <h2 id="music">Music</h2>
+    <p>The music card shows what any music app is playing: the cover, the title and the artist, with previous, play / pause and next buttons.</p>
+    <ul>
+      <li>When nothing is playing it says so; tap it to open your music app. Choose the app in <b>Settings &gt; Dashboard apps &gt; Default music app</b>.</li>
+      <li><b>Like button:</b> if the playing app offers a like (for example YouTube Music), a heart takes the place of the previous button. Tap to like or unlike. You can turn this off in the settings.</li>
+      <li><b>Progress bar:</b> the larger layouts show the elapsed time, the length and a bar you can drag to jump in the song.</li>
+      <li><b>Play when connected:</b> optionally start playing by itself when the car connects (<b>Settings &gt; Look and behaviour</b>).</li>
+      <li>With the <i>Album art</i> accent, the colours of the app follow the cover of the current song.</li>
+    </ul>
+    <div class="tip"><p><b>Nothing shows?</b> The music card needs <b>Music and navigation access</b>. Check that it says <i>Allowed</i> in the setup screen.</p></div>
+
+    <!-- ===== map ===== -->
+    <h2 id="map">Map and navigation</h2>
+    <p>The map is Google's own live map, with 3D buildings and traffic, following your car. As you speed up it zooms out smoothly; while you drive it tilts into a driving view.</p>
+    <ul>
+      <li><b>Car button:</b> switches between the tilted driving view and a flat map.</li>
+      <li><b>Compass button:</b> after you drag or pinch the map, this brings it back to your position.</li>
+      <li><b>Home and Work</b> buttons start a route to the places you saved. <b>Set destination</b> (or the magnifier in landscape) lets you search anywhere.</li>
+    </ul>
+    <p>You can choose how navigation works in <b>Settings &gt; Maps &gt; Map service</b>:</p>
+    <ul>
+      <li><b>Google API</b> (recommended): routes, traffic and turn-by-turn all run inside the dashboard, using your own Google key.</li>
+      <li><b>Custom Maps App</b>: the dashboard shows the live map and reads turn-by-turn, arrival time and time left from the maps app you choose (it must show a navigation notification). Home and Work open that app, and tapping the map opens it too. No routing happens in the dashboard in this mode.</li>
+    </ul>
+
+    <h3 id="google-key">Get a Google key</h3>
+    <p>Routes, destination search and traffic times use <b>your own</b> Google API key, so you never use anyone else's allowance. Google gives a free monthly allowance, and the key stays on your phone. The live map works without it.</p>
+    <ol>
+      <li>Open <code>console.cloud.google.com</code> and sign in.</li>
+      <li>Create a project and add a billing account (Google asks for a card, but the free monthly allowance is large).</li>
+      <li>In <b>APIs &amp; Services &gt; Library</b>, turn on <b>Routes API</b>, <b>Places API (New)</b> and <b>Map Tiles API</b>.</li>
+      <li>In <b>APIs &amp; Services &gt; Credentials</b>, create an <b>API key</b> and copy it.</li>
+      <li>In the app open <b>Settings &gt; Maps &gt; Google key &gt; Add key</b>, paste the key and tap <b>Check</b>.</li>
+    </ol>
+    <p><b>Check</b> tries the three services with your key. If all work, the button becomes <b>Save</b>. If something fails, the app tells you which one and what to fix (for example "Not turned on: press Enable in Google Cloud"). You can also choose <b>Save anyway</b>. The status row shows <i>Valid</i>, <i>Needs fixing</i> or <i>Not added</i>.</p>
+    <div class="tip"><p><b>Tip.</b> If you restrict the key to Android apps in Google Cloud, enter the app's package name and its SHA-1 fingerprint. A key without restrictions is simpler but anyone who gets it can use it, so keep it private.</p></div>
+
+    <h3 id="route">Set a destination</h3>
+    <ol>
+      <li>Tap <b>Home</b> or <b>Work</b>, or tap <b>Set destination</b> / the magnifier.</li>
+      <li>Type a place or an address. Results appear while you type, nearest to your car first. Tap one.</li>
+      <li>The route is drawn on the map, coloured by traffic: blue is normal, orange is slow and red is a jam.</li>
+      <li>To stop, tap <b>End route</b> (or the ✕ button in landscape).</li>
+    </ol>
+    <p>To set <b>Home</b> and <b>Work</b>, open <b>Settings &gt; Maps</b> and tap the row. You can <b>pick on the map</b>, <b>paste a map link</b> (from Google Maps, Apple Maps, Waze, Amap, OpenStreetMap and others), <b>type an address</b>, or clear it. A spot picked on the map is exact.</p>
+
+    <h3 id="banner">The turn banner</h3>
+    <p>While you drive a route, a glass banner at the top of the map shows the distance to the next turn in large figures, the instruction with the street name in bold (roundabouts and U-turns have their own symbols), and a small line with the arrival time, the time left and the distance left. A round bubble in the corner shows the minutes left. If you leave the route, the app finds a new one by itself.</p>
+
+    <!-- ===== dock ===== -->
+    <h2 id="dock">The app dock</h2>
+    <p>The dock holds your favourite apps. Tapping one opens it on the same screen the dashboard is on, so on the car screen the app opens on the car.</p>
+    <ul>
+      <li><b>All apps:</b> the last button opens a sheet with every app on the phone.</li>
+      <li><b>Change the dock:</b> press and hold the all-apps button (or tap the plus button when the dock is empty), then tick the apps you want. The picker has search and shows the app icons.</li>
+      <li><b>App names:</b> you can show names under the icons in <b>Settings &gt; Look and behaviour</b>.</li>
+    </ul>
+
+    <!-- ===== floating ===== -->
+    <h2 id="floating">Floating return button</h2>
+    <p>When you open another app on the car screen, a small round glass button stays on top. Tap it once to come back to the cockpit; it blinks while it works and can take a second or two.</p>
+    <ul>
+      <li><b>Move it</b> by dragging it anywhere on the screen. It stays where you drop it.</li>
+      <li>It fades when you are not using it.</li>
+      <li>Turn it on or off in <b>Settings &gt; Look and behaviour &gt; Floating home button</b>. By default it is not shown on the phone's own screen; switch on <b>Floating button on phone screen</b> if you want it there too.</li>
+      <li>A silent notification keeps the button alive. To hide it, use <b>Hide the floating button notification</b> in the settings; the button keeps working.</li>
+    </ul>
+    <div class="tip"><p><b>Tip.</b> The system back swipe on the car screen also returns you, even without the button.</p></div>
+
+    <!-- ===== settings ===== -->
+    <h2 id="settings">Settings, one by one</h2>
+    <p>Open the settings by swiping down on the dashboard and tapping the gear. Use the back button to return; there is nothing to save.</p>
+    <div class="tablewrap"><table>
+      <tr><th>Section</th><th>What is in it</th></tr>
+      <tr><td><b>Setup</b></td><td>Every permission and its state, and a shortcut to App info. See <a href="#permissions">Allow what it needs</a>.</td></tr>
+      <tr><td><b>Weather</b></td><td>Search and choose your city.</td></tr>
+      <tr><td><b>Maps</b></td><td>Map service (Google API or Custom Maps App), the Google key and its status, a guide to get a key, <b>Home</b> and <b>Work</b>, and <b>3D buildings</b>. With a custom maps app: which app to use.</td></tr>
+      <tr><td><b>Dashboard apps</b></td><td>Choose the dock apps, and the default music, clock, calendar and weather apps (Automatic works for most people).</td></tr>
+      <tr><td><b>Look and behaviour</b></td><td>Theme, background, animated background, accent colour, glass effects, music options, floating button options and language. See <a href="#look">Looks and themes</a>.</td></tr>
+      <tr><td><b>Diagnostics</b></td><td>Technical details such as the package name, the screen number and the state of the map and route services. Useful when asking for help.</td></tr>
+    </table></div>
+
+    <!-- ===== look ===== -->
+    <h2 id="look">Looks and themes</h2>
+    <ul>
+      <li><b>Theme:</b> <i>Follow phone</i>, <i>Dark</i> or <i>Light</i>.</li>
+      <li><b>Background:</b> the colour styles <i>Cockpit</i>, <i>Dusk</i>, <i>Forest</i>, <i>Graphite</i> and <i>Slate</i>, or <i>My photo</i> from your gallery. A press and hold on an empty spot of the dashboard opens the picker too.</li>
+      <li><b>Animated background:</b> soft moving light and large colour bubbles behind the glass (not used with a photo).</li>
+      <li><b>Accent colour:</b> Mint, Sky, Violet, Pink, Orange, Yellow, Red, Lime, a custom colour, or <i>Album art</i> to follow the song.</li>
+      <li><b>Glass edge refraction</b> (Android 13 and newer): the rim of each panel picks up the light and colours behind it.</li>
+      <li><b>Glass shadow:</b> a soft shadow under the bottom edge of the panels.</li>
+      <li><b>Like button in music controls</b>, <b>Play music when connected to car</b>, <b>Show app names under shortcuts</b>.</li>
+      <li><b>Language:</b> English, Khmer, Russian or Polish.</li>
+    </ul>
+
+    <!-- ===== troubleshooting ===== -->
+    <h2 id="troubleshooting">Troubleshooting</h2>
+    <details class="faq glass"><summary>The app does not appear in the car's app list</summary><div class="a"><p>Make sure the phone and the car use the same Xiaomi account and that interconnectivity is connected. The car only lists apps it recognises, and Xiaomi Cockpit uses a package name for that reason; if the real Baidu app is installed on the phone, remove it and install Xiaomi Cockpit again.</p></div></details>
+    <details class="faq glass"><summary>The floating button does not bring the dashboard back</summary><div class="a"><p>Tap once and wait two seconds (taps while it works are ignored). Check that <b>Display over other apps</b> is allowed, <b>Autostart</b> is on, and <b>Battery saver</b> is set to <b>No restrictions</b>. As a fallback use the system back swipe.</p></div></details>
+    <details class="faq glass"><summary>A permission switch is greyed out</summary><div class="a"><p>Open <b>App info</b>, tap the three dots at the top and choose <b>Unlock permissions</b>, then try the switch again.</p></div></details>
+    <details class="faq glass"><summary>Music or the track title does not show</summary><div class="a"><p>Check <b>Music and navigation access</b>. Start a song in your music app and give it a few seconds. Some apps do not offer a like button; then the previous button stays.</p></div></details>
+    <details class="faq glass"><summary>The map says "Allow location to show the map"</summary><div class="a"><p>Allow <b>Location</b> in the setup screen and, for the car screen, check that the phone has a GPS fix (go outside or near a window).</p></div></details>
+    <details class="faq glass"><summary>Home, Work or "Set destination" asks for a Google key</summary><div class="a"><p>These need your own key. Follow <a href="#google-key">Get a Google key</a>. If Check reports a problem, fix the item it names (usually turning on one of the three APIs or adding a billing account).</p></div></details>
+    <details class="faq glass"><summary>"Finding the route…" never finishes</summary><div class="a"><p>Check the internet connection on the phone and the key status in <b>Settings &gt; Maps</b>. Press <b>Check</b> again to see which service fails.</p></div></details>
+    <details class="faq glass"><summary>The weather is empty</summary><div class="a"><p>Choose your city in <b>Settings &gt; Weather</b>, and check the phone has internet.</p></div></details>
+    <details class="faq glass"><summary>The layout looks too big or too small on the car</summary><div class="a"><p>The app scales each car layout so it matches the phone. If it still looks off on your car, send a photo of the screen and the car model so it can be tuned.</p></div></details>
+
+    <!-- ===== updates ===== -->
+    <h2 id="updates">Updating</h2>
+    <p>Download the newest <a href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases/latest/download/Xiaomi-Cockpit.apk">Xiaomi-Cockpit.apk</a> and install it over the old one. Your settings, key, Home and Work are kept. The <a href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases">releases page</a> lists what changed in each version.</p>
+    <p><a class="btn primary" href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases/latest/download/Xiaomi-Cockpit.apk"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-download"/></svg>Download the latest version</a></p>
+  </article>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="links"><a href="./">Home</a><a href="./#install">Download</a><a href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases">All versions</a></div>
+    <p>Xiaomi Cockpit is an independent community project. It is not affiliated with, endorsed by or sponsored by Xiaomi, Baidu or Google. All names and trademarks belong to their owners.</p>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>

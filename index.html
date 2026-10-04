@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xiaomi Cockpit: a glass cockpit for your Xiaomi car screen</title>
+<meta name="description" content="Xiaomi Cockpit is a free community app that turns your Xiaomi car screen into a glass cockpit: clock, weather, music, a live map with navigation, and your favourite apps. Download the APK and follow the guide.">
+<meta name="theme-color" content="#0a1621">
+<meta property="og:title" content="Xiaomi Cockpit">
+<meta property="og:description" content="A glass cockpit for your Xiaomi car screen: clock, weather, music, live map and apps.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xiaomi-cockpit.github.io/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  /* set the theme before the page paints, so there is no flash */
+  (function () {
+    try {
+      var q = /[?&]theme=(light|dark)/.exec(location.search);
+      var t = q ? q[1] : localStorage.getItem("cockpit-theme");
+      if (t !== "light" && t !== "dark") t = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+
+<header class="top">
+  <div class="wrap">
+    <nav class="nav glass strong" aria-label="Main">
+      <a class="brand" href="./"><span class="mark"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-gauge"/></svg></span>Xiaomi Cockpit</a>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#screens">Screens</a></li>
+        <li><a href="#install">Download</a></li>
+        <li><a href="guide.html">User guide</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <button class="iconbtn" id="theme-btn" type="button" aria-label="Switch between dark and light theme" title="Dark / light">
+        <svg class="ic moon" aria-hidden="true"><use href="assets/icons.svg#i-moon"/></svg>
+        <svg class="ic sun" aria-hidden="true"><use href="assets/icons.svg#i-sun"/></svg>
+      </button>
+      <button class="iconbtn" id="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-menu"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <!-- hero -->
+  <div class="hero">
+    <div class="reveal">
+      <p class="tiny">Community app for Xiaomi interconnectivity</p>
+      <h1>A glass cockpit for your Xiaomi car screen</h1>
+      <p class="sub">Clock, weather, music, a live map with navigation and your favourite apps, on one calm glass dashboard. Made for the Xiaomi phone-to-car connection, free and community built.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases/latest/download/Xiaomi-Cockpit.apk"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-download"/></svg>Download the APK</a>
+        <a class="btn ghost glass" href="guide.html"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-book"/></svg>Read the user guide</a>
+      </div>
+      <div class="badges">
+        <span class="chip" hidden><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-check"/></svg>Latest <b data-version hidden></b></span>
+        <span class="chip"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-phone"/></svg>Android 12 or newer</span>
+        <span class="chip"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-globe"/></svg>English, Khmer, Russian, Polish</span>
+      </div>
+    </div>
+
+    <!-- a drawn preview of the dashboard on the car screen -->
+    <div class="reveal" aria-hidden="true">
+      <div class="carscreen glass strong">
+        <div class="screen">
+          <div class="mdock glass">
+            <i style="--c:#ea4335"></i><i style="--c:#4285f4"></i><i style="--c:#ff0033"></i><i style="--c:#34a853"></i><i style="--c:#fbbc04"></i><i style="--c:#a78bfa"></i><i></i>
+          </div>
+          <div class="mmap">
+            <svg class="streets" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+              <path class="street" d="M-10 90 L420 150"/><path class="street" d="M-10 230 L420 210"/>
+              <path class="street" d="M90 -10 L120 320"/><path class="street" d="M250 -10 L300 320"/>
+              <path class="street" d="M-10 30 L180 140 L420 120"/>
+              <path class="route" d="M120 330 L150 215 L255 190 L270 105 L330 60"/>
+              <g transform="translate(150 215)"><circle class="car" r="11"/><path d="M0-6 L5 5 L0 2 L-5 5Z" fill="#06222b"/></g>
+            </svg>
+            <div class="mbanner glass">
+              <span class="turn"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 20V10a4 4 0 0 1 4-4h5"/><path d="M15 3l3 3-3 3"/></svg></span>
+              <div><b>350 m</b><span>Turn right onto Main Street</span><span>10:42 · 14 min · 6.2 km</span></div>
+            </div>
+            <div class="rb glass"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-car"/></svg></div>
+            <div class="eta glass"><div>14<small>min</small></div></div>
+          </div>
+          <div class="mright">
+            <div class="mclock glass">
+              <span class="tiny">Saturday</span>
+              <div class="t" id="mock-time">10:28</div>
+              <div class="w"><span>28° Overcast</span><span>H 32° L 25°</span></div>
+            </div>
+            <div class="mmusic glass">
+              <div class="row"><div class="cover"></div><div><div class="ttl">Echoes</div><div class="art">Lăn Từ</div></div></div>
+              <div>
+                <div class="prog"><i></i></div>
+                <div class="ctrl">
+                  <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-heart"/></svg>
+                  <span class="pl"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke-width="3"/></svg></span>
+                  <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M14 12L5 6v12z"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- features -->
+  <section id="features">
+    <div class="sec-head reveal">
+      <p class="tiny">Features</p>
+      <h2>Everything you glance at while driving, in one place</h2>
+      <p>Big, calm and easy to hit on a car touch screen. Dark and light themes, a moving cockpit background and glass panels that pick up the accent colour.</p>
+    </div>
+    <div class="grid f3">
+      <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-clock"/></svg></span>Clock and weather</h3>
+        <p>A big light clock, the date, live weather with the day's high and low, and your next calendar event with its time and length. A small gauge shows battery, Wi-Fi and mobile signal.</p></article>
+      <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-music"/></svg></span>Music</h3>
+        <p>Shows what is playing in any music app: cover art, title, progress you can drag, previous, play and next, and a like button when the app supports it. The accent colour can follow the album cover.</p></article>
+      <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-map"/></svg></span>Live map</h3>
+        <p>Google's map with 3D buildings and live traffic follows your car. It zooms out as you speed up, tilts when you drive, and you can pinch, drag and snap back to your position.</p></article>
+      <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-route"/></svg></span>Navigation</h3>
+        <p>Pick Home, Work, search a place or choose a spot on the map. See the route coloured by traffic, a turn-by-turn banner with the street name, time left and arrival time, with automatic re-routing.</p></article>
+      <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-apps"/></svg></span>App dock</h3>
+        <p>Your favourite apps one tap away, opened on the car screen. Tap the all-apps button to see every app, search them, and long-press to change the shortcuts.</p></article>
+      <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-gauge"/></svg></span>Floating return button</h3>
+        <p>When you open another app on the car screen, a small glass button stays on top. Tap it to come straight back to the cockpit. Drag it anywhere you like.</p></article>
+      <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-glass"/></svg></span>Liquid glass design</h3>
+        <p>Frosted panels with a lit top edge, a soft shadow below and an accent glow along the rim. Choose a background, an accent colour or your own photo, in a dark or a light theme.</p></article>
+      <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-screens"/></svg></span>Fits every screen</h3>
+        <p>One layout for the phone and two for the car: a compact landscape and a roomy full screen. Sizes are scaled so buttons and text look the same on each.</p></article>
+      <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-globe"/></svg></span>Your language</h3>
+        <p>English, Khmer, Russian and Polish, including dates, units, the map and the turn-by-turn directions. More can be added.</p></article>
+    </div>
+  </section>
+
+  <!-- screens -->
+  <section id="screens">
+    <div class="sec-head reveal">
+      <p class="tiny">Screens</p>
+      <h2>Three layouts, picked for you</h2>
+      <p>The app looks at the window it is shown in and arranges the cards to fit. Nothing scrolls; everything stays within reach.</p>
+    </div>
+    <div class="sizes">
+      <div class="size glass reveal">
+        <div class="wf" style="width:96px;grid-template-rows:20px 38px 22px 14px"><i></i><i class="m"></i><i></i><i class="m"></i></div>
+        <h3>Phone and tall windows</h3><p>Clock, live map, music and the app row stacked top to bottom.</p>
+      </div>
+      <div class="size glass reveal">
+        <div class="wf" style="width:150px;grid-template-columns:14px 1fr 1fr;grid-template-rows:32px 40px"><i class="m" style="grid-row:1/3"></i><i></i><i></i><i class="m" style="grid-column:2/4"></i></div>
+        <h3>Compact car screen</h3><p>Apps on the left, music and clock on top, the map as one wide box below.</p>
+      </div>
+      <div class="size glass reveal">
+        <div class="wf" style="width:168px;grid-template-columns:14px 1fr 46px;grid-template-rows:34px 34px"><i class="m" style="grid-row:1/3"></i><i class="m" style="grid-row:1/3"></i><i></i><i></i></div>
+        <h3>Full car screen</h3><p>Apps on the left, a big map in the middle, clock above a full music player on the right.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- download and install -->
+  <section id="install">
+    <div class="sec-head reveal">
+      <p class="tiny">Download and install</p>
+      <h2>Up and running in a few minutes</h2>
+      <p>Xiaomi Cockpit is not on an app store, so you install the APK file yourself. It takes about five minutes the first time.</p>
+    </div>
+
+    <div class="dl-box glass strong reveal">
+      <h3>Xiaomi Cockpit for Android</h3>
+      <p class="dim">Free · No account needed <span class="chip" hidden style="margin-left:6px"><b data-version hidden></b></span></p>
+      <a class="btn primary" href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases/latest/download/Xiaomi-Cockpit.apk"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-download"/></svg>Download Xiaomi-Cockpit.apk</a>
+      <p class="dim" style="margin:10px 0 0;font-size:.92rem">Or see all versions on the <a href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases">releases page</a>.</p>
+    </div>
+
+    <div class="grid f2" style="margin-bottom:18px">
+      <div class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-check"/></svg></span>What you need</h3>
+        <ul>
+          <li>A Xiaomi or Redmi phone with HyperOS, Android 12 or newer.</li>
+          <li>A Xiaomi car with phone-to-car interconnectivity, and the same Xiaomi account on the phone and in the car.</li>
+          <li>The real Baidu app must not be installed on the phone (see the FAQ).</li>
+        </ul></div>
+      <div class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-key"/></svg></span>Optional: a Google key</h3>
+        <p>The live map works right away. For routes, destination search and traffic times you add your own free Google API key. The guide shows every click.</p>
+        <p style="margin-top:.6em"><a href="guide.html#google-key">How to get a key</a></p></div>
+    </div>
+
+    <ol class="steps" style="list-style:none;margin:0;padding:0">
+      <li class="step glass reveal"><span class="n"></span><div><h3>Download the APK on your phone</h3><p>Tap the download button above in your phone's browser. If your browser warns that this type of file can be harmful, choose to keep it. It is an app file that does not come from a store.</p></div></li>
+      <li class="step glass reveal"><span class="n"></span><div><h3>Install it</h3><p>Open the downloaded file. Android asks you to allow installing apps from this source: allow it, then tap Install. If Play Protect asks, choose <b>Install anyway</b>. Installing a newer version over an old one keeps your settings.</p></div></li>
+      <li class="step glass reveal"><span class="n"></span><div><h3>Open the app and choose your language</h3><p>The first start asks for a language and then opens the setup screen.</p></div></li>
+      <li class="step glass reveal"><span class="n"></span><div><h3>Allow what the app needs</h3>
+        <p>On the setup screen tap each row and allow it:</p>
+        <ul><li><b>Display over other apps</b>: for the floating return button.</li><li><b>Music and navigation access</b>: so the app can show what is playing.</li><li><b>Notifications</b>, <b>Location</b> (speed and map) and <b>Calendar</b> (next event).</li></ul>
+        <p>If a switch is greyed out, open <b>App info</b>, tap the three-dot menu and choose <b>Unlock permissions</b>, then try again. On HyperOS also turn on <b>Autostart</b>, set <b>Battery saver</b> to <b>No restrictions</b>, and allow <b>Display pop-up windows</b> and <b>Chain start</b>.</p></div></li>
+      <li class="step glass reveal"><span class="n"></span><div><h3>Connect to the car</h3><p>Connect your phone to the car with Xiaomi interconnectivity and open Xiaomi Cockpit from the app list on the car screen, or pin it to the car's home screen. The dashboard fits the window it is shown in.</p></div></li>
+      <li class="step glass reveal"><span class="n"></span><div><h3>Set your city and your places</h3><p>Open the settings (swipe down on the dashboard and tap the gear). Choose your city for the weather, set <b>Home</b> and <b>Work</b>, and pick your dock apps. The <a href="guide.html">user guide</a> explains every setting.</p></div></li>
+    </ol>
+  </section>
+
+  <!-- faq -->
+  <section id="faq">
+    <div class="sec-head reveal"><p class="tiny">Questions</p><h2>Good to know</h2></div>
+    <details class="faq glass reveal"><summary>Is it free? Is there an account or advertising?</summary><div class="a"><p>It is free, community built, and has no account and no advertising.</p></div></details>
+    <details class="faq glass reveal"><summary>Why does the app use the package name com.baidu.searchbox?</summary><div class="a"><p>The car only lists apps it knows. Xiaomi Cockpit uses a package name the car already accepts so it can appear on the car screen. The side effect is that it cannot be on the real Baidu app's phone at the same time: if the real Baidu app is installed, Android refuses the install with a "conflicting signatures" message. Uninstall the Baidu app first.</p></div></details>
+    <details class="faq glass reveal"><summary>Do I need a Google API key?</summary><div class="a"><p>Not to see the map. The live Google map is built in. The key is needed for routes, destination search and traffic times, so Home, Work and "Set destination" work. Google gives a free monthly allowance, and the key stays on your phone. See <a href="guide.html#google-key">the guide</a>.</p></div></details>
+    <details class="faq glass reveal"><summary>The floating button does not bring the cockpit back</summary><div class="a"><p>Tap it once and wait about two seconds. Make sure <b>Display over other apps</b> is allowed and <b>Autostart</b> is on for the app. More tips are in the <a href="guide.html#troubleshooting">troubleshooting section</a>.</p></div></details>
+    <details class="faq glass reveal"><summary>Is it made by Xiaomi?</summary><div class="a"><p>No. It is an independent community project and is not affiliated with Xiaomi, Baidu or Google. Names and trademarks belong to their owners.</p></div></details>
+  </section>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="links"><a href="guide.html">User guide</a><a href="#install">Download</a><a href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases">All versions</a></div>
+    <p>Xiaomi Cockpit is an independent community project. It is not affiliated with, endorsed by or sponsored by Xiaomi, Baidu or Google. All names and trademarks belong to their owners.</p>
+    <p>Map data and routes come from Google Maps Platform; weather comes from Open-Meteo.</p>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>
