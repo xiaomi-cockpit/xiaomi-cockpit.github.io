@@ -218,6 +218,14 @@ section { padding: 52px 0; }
 .dl-box .btn { margin: 10px 0 6px; font-size: 1.1rem; padding: 16px 30px; }
 .note { padding: 16px 20px; border-radius: 16px; --r: 16px; display: flex; gap: 12px; color: var(--dim); font-size: .96rem; }
 .note .ic { color: var(--accent); margin-top: 2px; }
+.note.warn { color: var(--text); padding: 20px 24px; margin-bottom: 18px; gap: 16px; }
+.note.warn b { color: var(--text); }
+.note.warn h3 { margin: 0 0 .3em; font-size: 1.15rem; }
+.note.warn p { margin: 0 0 .6em; color: var(--dim); font-size: .98rem; }
+.note.warn ul { margin: .4em 0 .6em; padding-left: 1.2em; color: var(--dim); font-size: .98rem; }
+.note.warn li { margin: .25em 0; }
+.note.warn .ic { width: 1.7em; height: 1.7em; margin-top: 1px; }
+.note.warn > div > *:last-child { margin-bottom: 0; }
 
 details.faq { padding: 4px 22px; margin-bottom: 12px; }
 details.faq summary { cursor: pointer; padding: 16px 0; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 12px; }

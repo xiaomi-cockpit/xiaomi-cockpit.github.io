@@ -55,7 +55,7 @@
     <div class="reveal">
       <p class="tiny">Community app for Xiaomi interconnectivity</p>
       <h1>A glass cockpit for your Xiaomi car screen</h1>
-      <p class="sub">Clock, weather, music, a live map with navigation and your favourite apps, on one calm glass dashboard. Made for the Xiaomi phone-to-car connection, free and community built.</p>
+      <p class="sub">Clock, weather, music, a live map with navigation and your favourite apps, on one calm glass dashboard. Made for the Xiaomi phone-to-car connection (Xiaomi interconnectivity), free and community built.</p>
       <div class="cta">
         <a class="btn primary" href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases/latest/download/Xiaomi-Cockpit.apk"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-download"/></svg>Download the APK</a>
         <a class="btn ghost glass" href="guide.html"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-book"/></svg>Read the user guide</a>
@@ -63,6 +63,7 @@
       <div class="badges">
         <span class="chip" hidden><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-check"/></svg>Latest <b data-version hidden></b></span>
         <span class="chip"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-phone"/></svg>Android 12 or newer</span>
+        <span class="chip"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-car"/></svg>Needs Xiaomi interconnectivity</span>
         <span class="chip"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-globe"/></svg>English, Khmer, Russian, Polish</span>
       </div>
     </div>
@@ -172,6 +173,19 @@
       <p>Xiaomi Cockpit is not on an app store, so you install the APK file yourself. It takes about five minutes the first time.</p>
     </div>
 
+    <div class="note warn glass strong reveal" id="requirements">
+      <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-alert"/></svg>
+      <div>
+        <h3>Before you install: what is required</h3>
+        <p>Xiaomi Cockpit is made for the Xiaomi phone-to-car connection. To use it in the car you need:</p>
+        <ul>
+          <li><b>A supported Xiaomi phone in the Chinese region</b> (China-region system software).</li>
+          <li><b>Xiaomi interconnectivity that connects to your car</b>, with the same Xiaomi account on the phone and in the car.</li>
+        </ul>
+        <p><b>Without interconnectivity</b> the app can only be opened on your phone. It will not show on the car screen.</p>
+      </div>
+    </div>
+
     <div class="dl-box glass strong reveal">
       <h3>Xiaomi Cockpit for Android</h3>
       <p class="dim">Free · No account needed <span class="chip" hidden style="margin-left:6px"><b data-version hidden></b></span></p>
@@ -182,8 +196,8 @@
     <div class="grid f2" style="margin-bottom:18px">
       <div class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-check"/></svg></span>What you need</h3>
         <ul>
-          <li>A Xiaomi or Redmi phone with HyperOS, Android 12 or newer.</li>
-          <li>A Xiaomi car with phone-to-car interconnectivity, and the same Xiaomi account on the phone and in the car.</li>
+          <li>A supported Xiaomi phone in the Chinese region, with HyperOS and Android 12 or newer.</li>
+          <li>A Xiaomi car, and Xiaomi interconnectivity that connects the phone to the car, with the same Xiaomi account on both.</li>
           <li>The real Baidu app must not be installed on the phone (see the FAQ).</li>
         </ul></div>
       <div class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-key"/></svg></span>Optional: a Google key</h3>
@@ -199,7 +213,7 @@
         <p>On the setup screen tap each row and allow it:</p>
         <ul><li><b>Display over other apps</b>: for the floating return button.</li><li><b>Music and navigation access</b>: so the app can show what is playing.</li><li><b>Notifications</b>, <b>Location</b> (speed and map) and <b>Calendar</b> (next event).</li></ul>
         <p>If a switch is greyed out, open <b>App info</b>, tap the three-dot menu and choose <b>Unlock permissions</b>, then try again. On HyperOS also turn on <b>Autostart</b>, set <b>Battery saver</b> to <b>No restrictions</b>, and allow <b>Display pop-up windows</b> and <b>Chain start</b>.</p></div></li>
-      <li class="step glass reveal"><span class="n"></span><div><h3>Connect to the car</h3><p>Connect your phone to the car with Xiaomi interconnectivity and open Xiaomi Cockpit from the app list on the car screen, or pin it to the car's home screen. The dashboard fits the window it is shown in.</p></div></li>
+      <li class="step glass reveal"><span class="n"></span><div><h3>Connect to the car</h3><p>Connect your phone to the car with Xiaomi interconnectivity (required for the car screen) and open Xiaomi Cockpit from the app list on the car screen, or pin it to the car's home screen. The dashboard fits the window it is shown in.</p></div></li>
       <li class="step glass reveal"><span class="n"></span><div><h3>Set your city and your places</h3><p>Open the settings (swipe down on the dashboard and tap the gear). Choose your city for the weather, set <b>Home</b> and <b>Work</b>, and pick your dock apps. The <a href="guide.html">user guide</a> explains every setting.</p></div></li>
     </ol>
   </section>
@@ -207,6 +221,7 @@
   <!-- faq -->
   <section id="faq">
     <div class="sec-head reveal"><p class="tiny">Questions</p><h2>Good to know</h2></div>
+    <details class="faq glass reveal"><summary>Does it work without Xiaomi interconnectivity?</summary><div class="a"><p>Only on the phone. Without interconnectivity the app can be opened on your phone, but it cannot be shown on the car screen. To use it in the car you need a supported Xiaomi phone in the Chinese region that can connect to the car with Xiaomi interconnectivity.</p></div></details>
     <details class="faq glass reveal"><summary>Is it free? Is there an account or advertising?</summary><div class="a"><p>It is free, community built, and has no account and no advertising.</p></div></details>
     <details class="faq glass reveal"><summary>Why does the app use the package name com.baidu.searchbox?</summary><div class="a"><p>The car only lists apps it knows. Xiaomi Cockpit uses a package name the car already accepts so it can appear on the car screen. The side effect is that it cannot be on the real Baidu app's phone at the same time: if the real Baidu app is installed, Android refuses the install with a "conflicting signatures" message. Uninstall the Baidu app first.</p></div></details>
     <details class="faq glass reveal"><summary>Do I need a Google API key?</summary><div class="a"><p>Not to see the map. The live Google map is built in. The key is needed for routes, destination search and traffic times, so Home, Work and "Set destination" work. Google gives a free monthly allowance, and the key stays on your phone. See <a href="guide.html#google-key">the guide</a>.</p></div></details>

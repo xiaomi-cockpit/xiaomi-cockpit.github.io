@@ -49,6 +49,7 @@
     <span class="tiny">In this guide</span>
     <div class="toc-list">
       <a href="#start">Getting started</a>
+      <a class="sub" href="#requirements">Requirements</a>
       <a class="sub" href="#install-app">Install the app</a>
       <a class="sub" href="#permissions">Allow what it needs</a>
       <a class="sub" href="#connect">Connect to the car</a>
@@ -76,6 +77,15 @@
 
     <!-- ===== start ===== -->
     <h2 id="start">Getting started</h2>
+    <h3 id="requirements">Requirements</h3>
+    <div class="tip"><p><b>Required for the car.</b> A <b>supported Xiaomi phone in the Chinese region</b>, and <b>Xiaomi interconnectivity</b> that connects the phone to your car (with the same Xiaomi account on the phone and in the car).</p></div>
+    <ul>
+      <li>A Xiaomi phone with HyperOS and Android 12 or newer, in the Chinese region.</li>
+      <li>A Xiaomi car that you can connect your phone to with Xiaomi interconnectivity.</li>
+      <li>The real Baidu app must not be installed on the phone (see Troubleshooting).</li>
+    </ul>
+    <p><b>Without interconnectivity</b> the app can only be opened on your phone. It cannot be shown on the car screen. Everything in this guide that talks about the car needs the connection to work first.</p>
+
     <h3 id="install-app">Install the app</h3>
     <ol>
       <li>On your phone, download <a href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases/latest/download/Xiaomi-Cockpit.apk">Xiaomi-Cockpit.apk</a>.</li>
@@ -100,7 +110,7 @@
     <ol><li>Turn on <b>Autostart</b>.</li><li>Set <b>Battery saver</b> to <b>No restrictions</b>.</li><li>Allow <b>Display pop-up windows</b> and <b>Chain start</b>.</li></ol>
 
     <h3 id="connect">Connect to the car</h3>
-    <p>Connect your phone to the car with Xiaomi interconnectivity (the same Xiaomi account on the phone and in the car). Then open <b>Xiaomi Cockpit</b> from the app list on the car screen, or pin it to the car's home screen. The app draws itself to fit the space the car gives it, and redraws if you resize it.</p>
+    <p>Connect your phone to the car with Xiaomi interconnectivity (the same Xiaomi account on the phone and in the car). This connection is required: without it the app only opens on the phone. Then open <b>Xiaomi Cockpit</b> from the app list on the car screen, or pin it to the car's home screen. The app draws itself to fit the space the car gives it, and redraws if you resize it.</p>
     <p>The first time you launch another app from the dock, HyperOS may show a <b>Chain start</b> question on the phone. Choose <b>Always allow</b>.</p>
 
     <!-- ===== layouts ===== -->
@@ -231,7 +241,7 @@
 
     <!-- ===== troubleshooting ===== -->
     <h2 id="troubleshooting">Troubleshooting</h2>
-    <details class="faq glass"><summary>The app does not appear in the car's app list</summary><div class="a"><p>Make sure the phone and the car use the same Xiaomi account and that interconnectivity is connected. The car only lists apps it recognises, and Xiaomi Cockpit uses a package name for that reason; if the real Baidu app is installed on the phone, remove it and install Xiaomi Cockpit again.</p></div></details>
+    <details class="faq glass"><summary>The app does not appear in the car's app list</summary><div class="a"><p>First check the <a href="#requirements">requirements</a>: a supported Xiaomi phone in the Chinese region and a working Xiaomi interconnectivity connection to the car. Make sure the phone and the car use the same Xiaomi account and that interconnectivity is connected. The car only lists apps it recognises, and Xiaomi Cockpit uses a package name for that reason; if the real Baidu app is installed on the phone, remove it and install Xiaomi Cockpit again.</p></div></details>
     <details class="faq glass"><summary>The floating button does not bring the dashboard back</summary><div class="a"><p>Tap once and wait two seconds (taps while it works are ignored). Check that <b>Display over other apps</b> is allowed, <b>Autostart</b> is on, and <b>Battery saver</b> is set to <b>No restrictions</b>. As a fallback use the system back swipe.</p></div></details>
     <details class="faq glass"><summary>A permission switch is greyed out</summary><div class="a"><p>Open <b>App info</b>, tap the three dots at the top and choose <b>Unlock permissions</b>, then try the switch again.</p></div></details>
     <details class="faq glass"><summary>Music or the track title does not show</summary><div class="a"><p>Check <b>Music and navigation access</b>. Start a song in your music app and give it a few seconds. Some apps do not offer a like button; then the previous button stays.</p></div></details>
