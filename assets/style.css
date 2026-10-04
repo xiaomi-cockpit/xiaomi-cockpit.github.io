@@ -321,8 +321,8 @@ footer p { max-width: 46em; margin: 0 auto .6em; }
 * { -webkit-tap-highlight-color: transparent; }
 .nav li a:active, .toc a:active, .iconbtn:active { background: rgba(var(--accent-rgb), .24); }
 .btn:active { transform: scale(.97); }
-@media (hover: none) {
-  /* on a touch screen :hover sticks after a tap, so it is not used there */
+@media (any-hover: none) {
+  /* where no mouse or trackpad is connected, :hover would stick after a tap, so it is not used (iPad with a trackpad has any-hover, so it keeps hover) */
   .nav li a:hover:not([aria-current="page"]) { background: transparent; }
   .iconbtn:hover { background: var(--chip); }
   .btn:hover { transform: none; }
