@@ -97,9 +97,9 @@
     <ol>
       <li>On your phone, download <a href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases/latest/download/Xiaomi-Cockpit.apk">Xiaomi-Cockpit.apk</a>.</li>
       <li>Open the file. When Android asks to allow installing from your browser or file manager, allow it. If Play Protect warns about an unknown app, choose <b>Install anyway</b>.</li>
-      <li>Open <b>Xiaomi Cockpit</b>. Choose your language, then go through the setup screen.</li>
+      <li>Open <b>Xiaomi Cockpit</b>. Choose your language and your map service (Google API, or a maps app of your own; you can change it later in the settings), then go through the setup screen.</li>
     </ol>
-    <div class="tip"><p><b>Tip.</b> Installing a new version on top of the old one keeps all your settings. You never need to uninstall to update.</p></div>
+    <div class="tip"><p><b>Tip.</b> Installing a new version on top of the old one keeps all your settings. You never need to uninstall to update, and the app can fetch updates for you (see <a href="#updates">Updating</a>).</p></div>
     <div class="tip"><p><b>If the install fails</b> with a message about conflicting signatures or an existing package, the real Baidu app (the one with the same package name) is on the phone. Uninstall it and install again.</p></div>
 
     <h3 id="permissions">Allow what it needs</h3>
@@ -110,7 +110,8 @@
       <tr><td><b>Music and navigation access</b></td><td>Notification access, so the app can read what is playing and control it.</td></tr>
       <tr><td><b>Notifications</b></td><td>A quiet notification that keeps the floating button alive.</td></tr>
       <tr><td><b>Location (speed and map)</b></td><td>Your position for the live map, speed and navigation.</td></tr>
-      <tr><td><b>Calendar (next event)</b></td><td>The next event on the clock card.</td></tr>
+      <tr><td><b>Calendar (next events)</b></td><td>The next events on the clock card.</td></tr>
+      <tr><td><b>Install unknown apps</b></td><td>Only for updates from inside the app: Android asks you to allow it the first time you update. See <a href="#updates">Updating</a>.</td></tr>
     </table></div>
     <p><b>If a switch is greyed out:</b> open <b>App info</b> (the setup screen has a button for it), tap the three-dot menu at the top and choose <b>Unlock permissions</b>. HyperOS blocks some permissions for apps installed from a file until you do this.</p>
     <p><b>Three more things in App info on HyperOS</b>, so the system does not stop the app:</p>
@@ -154,7 +155,7 @@
     <p>The dashboard shows the weather as well as telling it. The clock card has a sky with clouds that follow the condition (clear, partly cloudy, overcast, fog, rain, snow, storm). Rain falls over the whole dashboard, splashes on the top edge of the cards, and small drops form on the clock card, merge and run down the glass, bending the text behind them. Snow piles up on the top edges of the cards and the dock. Thunderstorms add lightning that flashes across the screen.</p>
     <ul>
       <li>In the <b>light theme</b>, gloomy weather darkens the whole interface and switches the live map to its night style. At <b>night</b> the app switches to the dark theme by itself.</li>
-      <li>Switch everything off with <b>Settings &gt; Look and behaviour &gt; Weather effects</b>. Then the theme stays as you chose it.</li>
+      <li>The effects are on by default. Switch everything off with <b>Settings &gt; Look and behaviour &gt; Weather effects</b>. Then the theme stays as you chose it.</li>
       <li>Rain and snow only show when your city is set and the weather data is there.</li>
     </ul>
 
@@ -215,10 +216,10 @@
     <h3 id="chargers">Nearby chargers</h3>
     <p>Tap the <b>bolt</b> button at the top right of the live map (Google's map). The button grows into a small card, the other buttons step aside and the map moves so you and the charger you are looking at stay clear of the card.</p>
     <ul>
-      <li>The chargers within about 15 km (50 km if there are fewer than three) are listed with the <b>quickest to reach first</b>. The card shows the name, the distance and drive time, the power in kW, the connector types and the address.</li>
+      <li>The <b>15 closest chargers</b> are listed, wherever they are (there is no distance limit, so in a remote area they can be in the next district or province), with the <b>quickest to reach first</b>. The card shows the name, the distance and drive time, every connector type known for the station (like <i>CCS2 · GB/T</i>) and where it is, smallest area first, for example <i>Nirouth · Chbar Ampov · Phnom Penh</i>. A part that is not known is simply left out.</li>
       <li>The <b>arrows</b> step through the chargers. The map zooms to show you, the charger and the blue route between, and the other chargers as small dots.</li>
       <li><b>Go</b> starts the route to that charger and the card shrinks back into the button. <b>✕</b> closes it without a route.</li>
-      <li>With your Google key the list comes from Google Places with connector types and power; without a key it comes from OpenStreetMap, which has less detail.</li>
+      <li>With your Google key the list comes from Google Places with the connector types; without a key, or when Google finds nothing, it comes from OpenStreetMap, which often has less detail (a station may then show no connector types).</li>
       <li>With a <i>Custom Maps App</i> the charger is opened in that app.</li>
     </ul>
 
@@ -253,8 +254,9 @@
       <tr><td><b>Maps</b></td><td>Map service (Google API or Custom Maps App; you choose it on the first start), <b>Live traffic update</b>, <b>Home</b> and <b>Work</b>, and <b>3D buildings</b>. With a custom maps app: which app to use.</td></tr>
       <tr><td><b>Dashboard apps</b></td><td>Choose the dock apps, and the default music, clock, calendar and weather apps (Automatic works for most people).</td></tr>
       <tr><td><b>Look and behaviour</b></td><td>Theme, background, animated background, accent colour, glass effects, music options, floating button options and language. See <a href="#look">Looks and themes</a>.</td></tr>
+      <tr><td><b>Updates</b></td><td>The installed version, <b>Check for updates</b>, and <b>Check for updates automatically</b>. See <a href="#updates">Updating</a>.</td></tr>
       <tr><td><b>Support</b></td><td><b>Report a problem</b> and <b>Request a feature</b>: send a description, screenshots and the app log. See <a href="#report">Report a problem</a>.</td></tr>
-      <tr><td><b>Diagnostics</b></td><td>Technical details such as the package name, the screen number and the state of the map and route services. Useful when asking for help.</td></tr>
+      <tr><td><b>Diagnostics</b></td><td>Technical details such as the build number, the package name, the Android version and the state of the map, route, place and weather services. Useful when asking for help.</td></tr>
     </table></div>
 
     <!-- ===== look ===== -->
@@ -265,6 +267,7 @@
       <li><b>Animated background:</b> soft moving light and large colour bubbles behind the glass (not used with a photo).</li>
       <li><b>Accent colour:</b> Mint, Sky, Violet, Pink, Orange, Yellow, Red, Lime, a custom colour, or <i>Album art</i> to follow the song.</li>
             <li><b>Weather effects:</b> the sky, rain, snow and lightning, and the gloomy light theme with the automatic dark theme at night.</li>
+      <li>The <b>glass shadow</b> under the panels and the <b>glass edge refraction</b> (Android 13 and newer: the rim of each panel picks up the light and colours behind it) are always on.</li>
       <li><b>Like button in music controls</b>, <b>Play music when connected to car</b>, <b>Show app names under shortcuts</b>.</li>
       <li><b>Language:</b> English, Khmer, Russian or Polish.</li>
     </ul>
@@ -276,9 +279,11 @@
     <details class="faq glass"><summary>A permission switch is greyed out</summary><div class="a"><p>Open <b>App info</b>, tap the three dots at the top and choose <b>Unlock permissions</b>, then try the switch again.</p></div></details>
     <details class="faq glass"><summary>Music or the track title does not show</summary><div class="a"><p>Check <b>Music and navigation access</b>. Start a song in your music app and give it a few seconds. Some apps do not offer a like button; then the previous button stays.</p></div></details>
     <details class="faq glass"><summary>The map says "Allow location to show the map"</summary><div class="a"><p>Allow <b>Location</b> in the setup screen and, for the car screen, check that the phone has a GPS fix (go outside or near a window).</p></div></details>
-    <details class="faq glass"><summary>Home, Work or "Set destination" asks for a Google key</summary><div class="a"><p>These need your own key. Follow <a href="#google-key">Get a Google key</a>. If Check reports a problem, fix the item it names (usually turning on one of the three APIs or adding a billing account).</p></div></details>
-    <details class="faq glass"><summary>"Finding the route…" never finishes</summary><div class="a"><p>Check the internet connection on the phone and the key status in <b>Settings &gt; Maps</b>. Press <b>Check</b> again to see which service fails.</p></div></details>
-    <details class="faq glass"><summary>The weather is empty</summary><div class="a"><p>Choose your city in <b>Settings &gt; Weather</b>, and check the phone has internet.</p></div></details>
+    <details class="faq glass"><summary>Home, Work or "Set destination" asks for a Google key</summary><div class="a"><p>These need your own key. Follow <a href="#google-key">Get a Google key</a>. If Check reports a problem, fix the item it names (usually turning on one of the four APIs or adding a billing account).</p></div></details>
+    <details class="faq glass"><summary>"Finding the route…" never finishes</summary><div class="a"><p>Check the internet connection on the phone and the key status in <b>Settings &gt; Google key</b>. Press <b>Check</b> again to see which service fails.</p></div></details>
+    <details class="faq glass"><summary>The weather is empty</summary><div class="a"><p>Choose your city in <b>Settings &gt; Weather</b>, and check the phone has internet. If you chose Google Weather and it does not answer, a note under <b>Weather source</b> says why (often the Weather API is not turned on for your key); the app then uses Open-Meteo.</p></div></details>
+    <details class="faq glass"><summary>Nearby chargers shows nothing, or too few</summary><div class="a"><p>Check the internet connection and that <b>Location</b> is allowed. Without a Google key the list comes from OpenStreetMap, which may know fewer stations in your area. With a key, make sure <b>Places API (New)</b> is turned on (<b>Check</b> in <b>Settings &gt; Google key</b> tells you). Use <b>Report</b> in the settings while the card is open if it still shows nothing.</p></div></details>
+    <details class="faq glass"><summary>The update does not install</summary><div class="a"><p>The first time, Android asks you to allow this app to install apps: tap <b>Open settings</b>, switch on <b>Allow from this source</b>, come back and tap <b>Update now</b> again. If the download fails, check the internet connection. You can always download the newest APK from the <a href="#updates">Updating</a> section and install it over the old one.</p></div></details>
     <details class="faq glass"><summary>Something else is wrong, or it still does not work</summary><div class="a"><p>Use <a href="#report">Report a problem</a> in the settings. Add a screenshot and keep the log on, then it is much easier to find the cause.</p></div></details>
     <details class="faq glass"><summary>The layout looks too big or too small on the car</summary><div class="a"><p>The app scales each car layout so it matches the phone. If it still looks off on your car, send a photo of the screen and the car model so it can be tuned.</p></div></details>
 
