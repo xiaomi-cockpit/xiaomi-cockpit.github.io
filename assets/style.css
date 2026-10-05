@@ -329,3 +329,12 @@ footer p { max-width: 46em; margin: 0 auto .6em; }
   .nav li a:active, .toc a:active, .iconbtn:active { background: rgba(var(--accent-rgb), .24); }
   .btn:active { transform: scale(.97); }
 }
+
+/* language switcher */
+.langsel { height: 40px; border: 0; border-radius: 20px; background: var(--chip); color: var(--text); font: inherit; font-size: .9rem; padding: 0 12px; cursor: pointer; flex: none; max-width: 120px; }
+.langsel:hover { background: rgba(var(--accent-rgb), .22); }
+.langsel:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.langsel option { color: #10141c; background: #fff; }
+@media (max-width: 760px) { .nav .iconbtn#theme-btn { margin-left: 0; } .nav .langsel { margin-left: auto; } }
+html.lang-km body { font-family: "Noto Sans Khmer", "Khmer OS", "Leelawadee UI", system-ui, sans-serif; line-height: 1.7; }
+html.lang-km h1, html.lang-km h2, html.lang-km h3 { line-height: 1.45; }

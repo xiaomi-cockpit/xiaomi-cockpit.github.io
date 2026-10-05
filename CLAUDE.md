@@ -39,3 +39,8 @@ No local build needed. To look at the pages: `python3 -m http.server`, then head
 
 ## Update (docs for v1.4.0)
 - Full pass over guide.html and index.html for v1.4.0: first start (language + map service), permissions table (calendar events, install unknown apps), weather effects on by default, nearby chargers (15 closest, no limit, connector types, place line), settings table (Updates section, Diagnostics wording), glass effects always on, extra FAQs (chargers empty, update does not install, Google Weather note), home page (three events, data sources, self-update). Keep both pages in step with the app's CLAUDE.md after every release.
+
+## Languages (website)
+- The site is available in English (default), Khmer (km), Russian (ru) and Polish (pl), like the app. `assets/i18n.js` translates the page in the browser: the KEY of each string is its English HTML (inline tags kept, icons as `{{ic:id}}`), the dictionaries are `assets/i18n/km.json`, `ru.json`, `pl.json` ({English HTML: translation}). Language = `?lang=` > saved choice (localStorage `cockpit-lang`) > browser language. A switcher (`#lang-select`) is added in the header.
+- When English text on a page changes or is added, add/update the same English string as a key in all three JSON files. To list the exact keys of a page, open it with `?dumpkeys=1` (a JSON of units/attrs/metas is appended). Untranslated text simply stays English.
+- Mark things that must never be translated with `translate="no"` or `aria-hidden="true"`. Translations were written by Claude and are welcome for native-speaker review.

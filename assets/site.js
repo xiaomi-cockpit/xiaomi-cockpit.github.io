@@ -215,15 +215,21 @@
       tick(); setInterval(tick, 10000);
     }
 
-    /* latest version badge, from the public release */
-    var vb = document.querySelectorAll("[data-version]");
-    if (vb.length && window.fetch) {
+    /* latest version badge, from the public release (shown again after a language change re-creates the badge text) */
+    var verText = "";
+    function showVersion() {
+      if (!verText) return;
+      document.querySelectorAll("[data-version]").forEach(function (el) { el.textContent = verText; el.hidden = false; if (el.parentElement) el.parentElement.hidden = false; });
+    }
+    document.addEventListener("i18n", showVersion);
+    if (document.querySelectorAll("[data-version]").length && window.fetch) {
       fetch("https://api.github.com/repos/xiaomi-cockpit/xiaomi-cockpit.github.io/releases/latest", { headers: { Accept: "application/vnd.github+json" } })
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (j) {
           if (!j || !j.tag_name) return;
           var d = j.published_at ? new Date(j.published_at).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "";
-          vb.forEach(function (el) { el.textContent = j.tag_name + (d ? " · " + d : ""); el.hidden = false; if (el.parentElement) el.parentElement.hidden = false; });
+          verText = j.tag_name + (d ? " · " + d : "");
+          showVersion();
         }).catch(function () {});
     }
 
