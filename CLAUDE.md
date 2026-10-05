@@ -33,3 +33,6 @@ No local build needed. To look at the pages: `python3 -m http.server`, then head
 ## Update (v1.3.0 content)
 - index.html: new feature cards (Weather you can see, Nearby EV chargers, Report and request; icon `i-bolt` added to the sprite), updated Clock/weather and Navigation cards, Google key card/FAQ (chargers, Google Weather), first-start step (language + map service), new FAQ "Can I ask for a new feature?".
 - guide.html: sections Weather effects (#weather-fx) and Nearby chargers (#chargers), route overview + live traffic update, one Google key (Settings > Google key, four services incl. Weather API), weather source/frequency, Home/Work/Search buttons, settings table, Report/Request captions.
+
+## Update (v1.4.0 content)
+- guide.html: next events (up to 3 rows), music bars without the visualizer setting, floating button off by default and never on the phone screen, glass shadow/refraction switches removed, self-update (Settings > Updates). index.html music card text updated.
