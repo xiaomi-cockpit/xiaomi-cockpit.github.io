@@ -146,7 +146,7 @@
     <p>The clock card shows the time in large light digits, the date on two lines, and the weather on the right: the temperature and an icon, the condition, your city and the day's high and low.</p>
     <ul>
       <li><b>Weather</b> comes from <b>Google Weather</b> (when your Google key works for it) or from free <b>Open-Meteo</b>. Pick your city in <b>Settings &gt; Weather</b>: type a name, tap search and choose from the list. There you also choose the <b>Weather source</b> (Automatic, Open-Meteo or Google Weather) and the <b>Update frequency</b> (every 15 minutes to every 3 hours, 30 minutes by default). Automatic uses Google when it works and Open-Meteo otherwise; if Google does not answer, a note under the row says why.</li>
-      <li><b>Next event</b> (bottom left) shows the date and time, how long it lasts, and its title. It needs the Calendar permission. When there is not much room, the length is left out.</li>
+      <li><b>Next events</b> (bottom left) lists up to three upcoming events, one per line, like <i>Today · All day · Dentist</i> or <i>Tue · 14:30 · Team meeting</i>. The first part is <i>Today</i>, then the weekday for the next days, and a date such as <i>Oct 12</i> from a week away. Long titles are cut with “…”. It needs the Calendar permission.</li>
       <li><b>Status gauge</b> (top right): the ring is the battery level, the Wi-Fi symbol inside shows Wi-Fi strength and the dots under it show mobile signal.</li>
     </ul>
 
@@ -166,7 +166,7 @@
       <li><b>Like button:</b> if the playing app offers a like (for example YouTube Music), a heart takes the place of the previous button. Tap to like or unlike. You can turn this off in the settings.</li>
       <li><b>Progress bar:</b> the larger layouts show the elapsed time, the length and a bar you can drag to jump in the song.</li>
       <li><b>Play when connected:</b> optionally start playing by itself when the car connects (<b>Settings &gt; Look and behaviour</b>).</li>
-      <li><b>Music bars:</b> five small bars next to the title (between the title and the buttons in the phone layout) move while a song plays and rest when it is paused. By default they move on their own. Switch on <b>Settings &gt; Look and behaviour &gt; Visualizer follows the music</b> and they follow the real sound: the bass and the drums on the left, the treble on the right. This needs the audio permission, which the phone asks for when you switch it on. The app only measures how loud the music is; nothing is recorded or saved. Some phones or music apps give no sound data; then the bars keep their own movement (<b>Settings &gt; Diagnostics &gt; Visualizer</b> shows what happens).</li>
+      <li><b>Music bars:</b> five small bars next to the title (between the title and the buttons in the phone layout) move while a song plays and rest when it is paused.</li>
       <li>With the <i>Album art</i> accent, the colours of the app follow the cover of the current song.</li>
     </ul>
     <div class="tip"><p><b>Nothing shows?</b> The music card needs <b>Music and navigation access</b>. Check that it says <i>Allowed</i> in the setup screen.</p></div>
@@ -237,7 +237,7 @@
     <ul>
       <li><b>Move it</b> by dragging it anywhere on the screen. It stays where you drop it.</li>
       <li>It fades when you are not using it.</li>
-      <li>Turn it on or off in <b>Settings &gt; Look and behaviour &gt; Floating home button</b>. By default it is not shown on the phone's own screen; switch on <b>Floating button on phone screen</b> if you want it there too.</li>
+      <li>Turn it on or off in <b>Settings &gt; Look and behaviour &gt; Floating home button</b>. It is off by default, and it is never shown on the phone's own screen.</li>
       <li>A silent notification keeps the button alive. To hide it, use <b>Hide the floating button notification</b> in the settings; the button keeps working.</li>
     </ul>
     <div class="tip"><p><b>Tip.</b> The system back swipe on the car screen also returns you, even without the button.</p></div>
@@ -264,10 +264,8 @@
       <li><b>Background:</b> the colour styles <i>Cockpit</i>, <i>Dusk</i>, <i>Forest</i>, <i>Graphite</i> and <i>Slate</i>, or <i>My photo</i> from your gallery. A press and hold on an empty spot of the dashboard opens the picker too.</li>
       <li><b>Animated background:</b> soft moving light and large colour bubbles behind the glass (not used with a photo).</li>
       <li><b>Accent colour:</b> Mint, Sky, Violet, Pink, Orange, Yellow, Red, Lime, a custom colour, or <i>Album art</i> to follow the song.</li>
-      <li><b>Glass edge refraction</b> (Android 13 and newer): the rim of each panel picks up the light and colours behind it.</li>
-      <li><b>Glass shadow:</b> a soft shadow under the bottom edge of the panels.</li>
-      <li><b>Weather effects:</b> the sky, rain, snow and lightning, and the gloomy light theme with the automatic dark theme at night.</li>
-      <li><b>Like button in music controls</b>, <b>Visualizer follows the music</b>, <b>Play music when connected to car</b>, <b>Show app names under shortcuts</b>.</li>
+            <li><b>Weather effects:</b> the sky, rain, snow and lightning, and the gloomy light theme with the automatic dark theme at night.</li>
+      <li><b>Like button in music controls</b>, <b>Play music when connected to car</b>, <b>Show app names under shortcuts</b>.</li>
       <li><b>Language:</b> English, Khmer, Russian or Polish.</li>
     </ul>
 
@@ -305,7 +303,8 @@
 
     <!-- ===== updates ===== -->
     <h2 id="updates">Updating</h2>
-    <p>Download the newest <a href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases/latest/download/Xiaomi-Cockpit.apk">Xiaomi-Cockpit.apk</a> and install it over the old one. Your settings, key, Home and Work are kept. The <a href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases">releases page</a> lists what changed in each version.</p>
+    <p>The app can update itself. Open <b>Settings &gt; Updates</b> and tap <b>Check for updates</b>: it looks at the project's published releases, shows what is new and, if you agree, downloads the new version and asks Android to install it over the old one (the first time Android may ask you to allow installing from this app). <b>Check for updates automatically</b> (on by default) does the same check by itself on the phone, at most every 12 hours, and asks before it installs anything. Your settings, key, Home and Work are kept.</p>
+    <p>You can also download the newest <a href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases/latest/download/Xiaomi-Cockpit.apk">Xiaomi-Cockpit.apk</a> and install it over the old one. Your settings, key, Home and Work are kept. The <a href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases">releases page</a> lists what changed in each version.</p>
     <p><a class="btn primary" href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases/latest/download/Xiaomi-Cockpit.apk"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-download"/></svg>Download the latest version</a></p>
   </article>
 </div>
