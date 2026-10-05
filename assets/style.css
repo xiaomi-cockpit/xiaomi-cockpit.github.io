@@ -171,7 +171,25 @@ header.top { position: sticky; top: 12px; z-index: 50; padding-top: 12px; }
 .mbanner span { font-size: .72rem; color: var(--dim); line-height: 1.2; display: block; }
 .mmap .eta { position: absolute; right: 10px; bottom: 10px; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; text-align: center; font-size: 1.15rem; line-height: 1; --r: 50%; }
 .mmap .eta small { display: block; font-size: .55rem; color: var(--dim); }
-.mmap .rb { position: absolute; right: 10px; top: 10px; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; color: var(--accent); --r: 50%; }
+.mmap .mbtns { position: absolute; right: 10px; top: 10px; display: flex; gap: 8px; }
+.mmap .rb { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; color: var(--text); --r: 50%; }
+.mmap .rb.bolt { color: var(--accent); }
+.mmap .route.slow { stroke: #f5a623; } .mmap .route.jam { stroke: #ef4444; }
+.mmap .pins { opacity: 0; transition: opacity .5s; } .mmap .pins circle { fill: var(--accent); stroke: #fff; stroke-width: 2; } .mmap .pins path { fill: var(--on-accent); }
+.mclock .mc-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.mclock .gauge { width: 26px; height: 26px; margin: -3px -3px 0 0; fill: var(--text); }
+.mclock .gauge .ring, .mclock .gauge .wifi { fill: none; stroke: var(--text); stroke-width: 3; stroke-linecap: round; }
+.mclock .gauge .wifi { stroke-width: 2.4; }
+.mclock .ev1 { margin-top: 6px; font-size: .68rem; color: var(--dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mmap .evcard { position: absolute; right: 10px; top: 10px; width: 54%; padding: 10px 12px; border-radius: 16px; --r: 16px; opacity: 0; pointer-events: none; transform: scale(.85); transform-origin: top right; transition: opacity .45s, transform .45s; }
+.evcard .evh { display: flex; justify-content: space-between; gap: 8px; font-size: .82rem; } .evcard .evc { color: var(--dim); font-size: .7rem; }
+.evcard .evm { font-size: .72rem; margin-top: 3px; } .evcard .evm.dim, .evcard .evp { color: var(--dim); }
+.evcard .evp { font-size: .62rem; margin-top: 3px; }
+.evcard .evb { display: flex; justify-content: flex-end; margin-top: 7px; } .evcard .go { background: var(--accent); color: var(--on-accent); font-weight: 700; font-size: .8rem; padding: 4px 16px; border-radius: 999px; }
+.screen.chargers .evcard { opacity: 1; transform: none; }
+.screen.chargers .mbanner, .screen.chargers .eta, .screen.chargers .mbtns, .screen.chargers .routeg { opacity: 0; }
+.screen.chargers .pins { opacity: 1; }
+.mbanner, .eta, .mbtns, .routeg { transition: opacity .4s; }
 .mright { display: grid; grid-template-rows: auto 1fr; gap: 10px; }
 .mclock { padding: 12px 14px; border-radius: 18px; --r: 18px; }
 .mclock .t { font-size: 2.5rem; font-weight: 200; line-height: 1; letter-spacing: -.03em; margin: 8px 0 6px; font-variant-numeric: tabular-nums; }
@@ -303,7 +321,8 @@ footer p { max-width: 46em; margin: 0 auto .6em; }
   .carscreen { padding: 10px; }
   .mclock, .mmusic { padding: 10px; overflow: hidden; }
   .mclock .t { font-size: 1.6rem; }
-  .mclock .w span:last-child, .mmusic .art, .mbanner span { display: none; }
+  .mclock .w span:last-child, .mclock .ev1, .mmusic .art, .mbanner span { display: none; }
+  .mmap .evcard { width: 66%; }
   .mbanner { max-width: 70%; padding: 6px; }
   .mbanner .turn { width: 30px; height: 30px; }
   .mbanner b { font-size: .95rem; }

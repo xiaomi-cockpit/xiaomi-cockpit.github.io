@@ -94,9 +94,11 @@
               </div>
             </div>
             <div class="mclock glass">
-              <span class="tiny">Saturday</span>
+              <div class="mc-top"><span class="tiny">Saturday</span>
+                <svg class="gauge" viewBox="0 0 40 40" aria-hidden="true"><path d="M9.5 29.5A15 15 0 1 1 30.5 29.5" class="ring"/><path d="M13.5 19.5a9.5 9.5 0 0 1 13 0M16 23a6 6 0 0 1 8 0" class="wifi"/><circle cx="20" cy="26.2" r="1.5"/><g class="dots"><circle cx="14" cy="33" r="1.5"/><circle cx="18" cy="34.4" r="1.5"/><circle cx="22" cy="34.4" r="1.5"/><circle cx="26" cy="33" r="1.5"/></g></svg></div>
               <div class="t" id="mock-time">10:28</div>
               <div class="w"><span>28° Overcast</span><span>H 32° L 25°</span></div>
+              <div class="ev1">Today · All day · Dentist</div>
             </div>
             </div>
             <div class="mmap">
@@ -104,15 +106,26 @@
               <path class="street" d="M-10 60 L420 100"/><path class="street" d="M-10 160 L420 140"/>
               <path class="street" d="M90 -10 L110 220"/><path class="street" d="M270 -10 L300 220"/>
               <path class="street" d="M-10 20 L170 90 L420 70"/>
-              <path class="route" d="M110 220 L130 150 L240 128 L275 70 L350 40"/>
+              <g class="routeg"><path class="route" d="M110 220 L130 150 L240 128"/><path class="route slow" d="M240 128 L275 70"/><path class="route jam" d="M275 70 L310 52"/><path class="route" d="M310 52 L350 40"/></g>
+              <g class="pins"><g transform="translate(180 60)"><circle r="9"/><path d="M1.5-5.5L-3 .8h3L-1.5 5.5 3-.8H0z"/></g><g transform="translate(330 150)"><circle r="9"/><path d="M1.5-5.5L-3 .8h3L-1.5 5.5 3-.8H0z"/></g><g transform="translate(60 100)"><circle r="9"/><path d="M1.5-5.5L-3 .8h3L-1.5 5.5 3-.8H0z"/></g></g>
               <g transform="translate(130 150)"><circle class="car" r="10"/><path d="M0-6 L5 5 L0 2 L-5 5Z" fill="#06222b"/></g>
             </svg>
             <div class="mbanner glass">
               <span class="turn"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 20V10a4 4 0 0 1 4-4h5"/><path d="M15 3l3 3-3 3"/></svg></span>
               <div><b>350 m</b><span>Turn right onto Main Street</span><span>10:42 · 14 min · 6.2 km</span></div>
             </div>
-            <div class="rb glass"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-car"/></svg></div>
+            <div class="mbtns">
+              <span class="rb glass x"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+              <span class="rb glass bolt"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-bolt"/></svg></span>
+            </div>
             <div class="eta glass"><div>14<small>min</small></div></div>
+            <div class="evcard glass">
+              <div class="evh"><b>Nirouth Charging</b><span class="evc">2 / 15</span></div>
+              <div class="evm">4 min · 2.1 km</div>
+              <div class="evm dim">CCS2 · GB/T</div>
+              <div class="evp">Nirouth · Chbar Ampov · Phnom Penh</div>
+              <div class="evb"><span class="go">Go</span></div>
+            </div>
           </div>
           </div>
         </div>

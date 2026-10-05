@@ -215,6 +215,10 @@
       tick(); setInterval(tick, 10000);
     }
 
+    /* the preview alternates between a route and the nearby chargers card */
+    var scr = document.querySelector(".carscreen .screen");
+    if (scr && !reduce) setInterval(function () { scr.classList.toggle("chargers"); }, 5500);
+
     /* latest version badge, from the public release (shown again after a language change re-creates the badge text) */
     var verText = "";
     function showVersion() {
