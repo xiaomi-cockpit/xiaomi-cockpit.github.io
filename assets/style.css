@@ -331,8 +331,8 @@ footer p { max-width: 46em; margin: 0 auto .6em; }
 }
 
 /* language switcher */
-.langsel { height: 40px; border: 0; border-radius: 20px; background: var(--chip); color: var(--text); font: inherit; font-size: .9rem; padding: 0 36px 0 16px; cursor: pointer; flex: none; max-width: 150px; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23888' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
-.langsel:hover { background: rgba(var(--accent-rgb), .22); }
+.langsel { height: 40px; border: 0; border-radius: 20px; background: var(--chip); color: var(--text); font: inherit; font-size: .9rem; padding: 0 36px 0 16px; cursor: pointer; flex: none; max-width: 150px; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
+.langsel:hover { background-color: rgba(var(--accent-rgb), .22); }
 .langsel:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .langsel option { color: #10141c; background: #fff; }
 @media (max-width: 760px) { .nav .iconbtn#theme-btn { margin-left: 0; } .nav .langsel { margin-left: auto; } }
@@ -341,3 +341,5 @@ html.lang-km h1, html.lang-km h2, html.lang-km h3 { line-height: 1.45; }
 
 @font-face { font-family: "Niradei"; src: url("fonts/Niradei-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; unicode-range: U+1780-17FF, U+19E0-19FF, U+200B-200D; }
 @font-face { font-family: "Niradei"; src: url("fonts/Niradei-Bold.ttf") format("truetype"); font-weight: 600 900; font-style: normal; font-display: swap; unicode-range: U+1780-17FF, U+19E0-19FF, U+200B-200D; }
+
+:root[data-theme="light"] .langsel { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%2310141c' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
