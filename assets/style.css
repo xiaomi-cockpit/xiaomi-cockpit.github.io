@@ -354,7 +354,7 @@ footer p { max-width: 46em; margin: 0 auto .6em; }
 .langsel:hover { background-color: rgba(var(--accent-rgb), .22); }
 .langsel:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .langsel option { color: #10141c; background: #fff; }
-@media (max-width: 760px) { .nav .iconbtn#theme-btn { margin-left: 0; } .nav .langsel { margin-left: auto; } }
+@media (max-width: 760px) { .nav .iconbtn#theme-btn { margin-left: 0; } .nav .langsel { margin-left: auto; padding: 0 28px 0 14px; background-position: right 10px center; max-width: 84px; } }
 html.lang-km body, html.lang-km .langsel { font-family: "Niradei", var(--font), "Noto Sans Khmer", "Khmer OS", "Leelawadee UI", sans-serif; line-height: 1.7; }
 html.lang-km h1, html.lang-km h2, html.lang-km h3 { line-height: 1.45; }
 
@@ -362,3 +362,17 @@ html.lang-km h1, html.lang-km h2, html.lang-km h3 { line-height: 1.45; }
 @font-face { font-family: "Niradei"; src: url("fonts/Niradei-Bold.ttf") format("truetype"); font-weight: 600 900; font-style: normal; font-display: swap; unicode-range: U+1780-17FF, U+19E0-19FF, U+200B-200D; }
 
 :root[data-theme="light"] .langsel { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%2310141c' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+@media (max-width: 760px) {
+  .nav { gap: 6px; padding: 8px 8px 8px 12px; }
+  .nav .brand { gap: 8px; font-size: .95rem; white-space: nowrap; }
+  .nav .iconbtn { width: 38px; height: 38px; }
+  .nav .langsel { height: 38px; padding: 0 24px 0 12px; background-position: right 8px center; max-width: 70px; }
+}
+@media (max-width: 380px) { .nav .brand { font-size: .88rem; } }
+@media (max-width: 380px) {
+  .nav { gap: 4px; padding: 6px 6px 6px 10px; }
+  .nav .brand { font-size: .8rem; gap: 6px; }
+  .nav .iconbtn { width: 34px; height: 34px; }
+  .nav .langsel { height: 34px; padding: 0 20px 0 9px; max-width: 58px; font-size: .8rem; background-position: right 6px center; }
+  .brand .mark:has(img) { width: 28px; height: 28px; }
+}

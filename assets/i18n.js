@@ -3,7 +3,7 @@
    The language comes from ?lang=xx, then the visitor's choice (remembered), then the browser's language. */
 (function () {
   "use strict";
-  var LANGS = [["en", "English"], ["km", "ខ្មែរ"], ["ru", "Русский"], ["pl", "Polski"]];
+  var LANGS = [["en", "English", "EN"], ["km", "ខ្មែរ", "KH"], ["ru", "Русский", "RU"], ["pl", "Polski", "PL"]];
   var KEY = "cockpit-lang";
   var SKIP = { script: 1, style: 1, svg: 1, canvas: 1, code: 1, pre: 1, noscript: 1, select: 1, option: 1 };
   var INLINE = { a: 1, b: 1, i: 1, em: 1, strong: 1, span: 1, small: 1, br: 1, svg: 1, use: 1, path: 1, sub: 1, sup: 1, kbd: 1, mark: 1, code: 1, img: 1 };
@@ -126,7 +126,12 @@
     sel.id = "lang-select";
     sel.className = "langsel";
     sel.setAttribute("aria-label", "Language");
-    LANGS.forEach(function (l) { var o = document.createElement("option"); o.value = l[0]; o.textContent = l[1]; sel.appendChild(o); });
+    var narrow = window.matchMedia ? window.matchMedia("(max-width: 760px)") : null;
+    /* on a phone the menu shows two-letter codes so the header stays on one line */
+    function names() { Array.prototype.forEach.call(sel.options, function (o, i) { o.textContent = narrow && narrow.matches ? LANGS[i][2] : LANGS[i][1]; }); }
+    LANGS.forEach(function (l) { var o = document.createElement("option"); o.value = l[0]; sel.appendChild(o); });
+    names();
+    if (narrow && narrow.addEventListener) narrow.addEventListener("change", names);
     sel.addEventListener("change", function () { setLang(sel.value, true); });
     nav.insertBefore(sel, tb || null);
   }
