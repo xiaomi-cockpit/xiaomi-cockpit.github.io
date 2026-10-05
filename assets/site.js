@@ -199,6 +199,17 @@
     var tb = document.getElementById("theme-btn");
     if (tb) tb.addEventListener("click", function () { setTheme(currentTheme() === "light" ? "dark" : "light", true); if (reduce && ctx) draw(3); });
     var mb = document.getElementById("menu-btn"), nav = document.querySelector(".nav");
+    /* on a phone the dark / light switch lives inside the opened menu */
+    var navul = nav && nav.querySelector("ul");
+    if (navul && tb) {
+      var li = document.createElement("li"), tb2 = document.createElement("button");
+      li.className = "navtheme"; tb2.type = "button"; tb2.className = "themerow";
+      tb2.innerHTML = '<svg class="ic moon" aria-hidden="true"><use href="assets/icons.svg#i-moon"/></svg><svg class="ic sun" aria-hidden="true"><use href="assets/icons.svg#i-sun"/></svg><span>Dark / light</span>';
+      tb2.addEventListener("click", function () { tb.click(); });
+      li.appendChild(tb2); navul.appendChild(li);
+      var rowText = function () { tb2.querySelector("span").textContent = tb.getAttribute("title") || "Dark / light"; };
+      rowText(); document.addEventListener("i18n", rowText);
+    }
     if (mb && nav) mb.addEventListener("click", function () { var o = nav.classList.toggle("open"); mb.setAttribute("aria-expanded", o ? "true" : "false"); });
 
     /* reveal on scroll */
