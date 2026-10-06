@@ -45,3 +45,9 @@ No local build needed. To look at the pages: `python3 -m http.server`, then head
 - When English text on a page changes or is added, add/update the same English string as a key in all three JSON files. To list the exact keys of a page, open it with `?dumpkeys=1` (a JSON of units/attrs/metas is appended). Untranslated text simply stays English.
 - Mark things that must never be translated with `translate="no"` or `aria-hidden="true"`. Translations were written by Claude and are welcome for native-speaker review.
 - Asset links in the HTML carry ?v=<timestamp>; change it whenever style.css/site.js/i18n.js change, so phones do not keep old copies.
+
+## Update (v1.6.0 content)
+- Yandex API map service documented: guide (#yandex-key: get a key, status colours, black-map FAQ), map service list, route/chargers notes, settings table, first-start texts; home page (Live map and Navigation cards, optional-key card, new FAQ "Can I use Yandex maps instead of Google?", footer data sources).
+- Theme rules (Theme setting wins; only Light lets weather effects darken; live switching with a fade), weather wording from Google Weather, key status colours (green/orange/red) described in the guide.
+- Hero preview: weather text "Cloudy" (Google wording) and the map box has a faint accent rim (`.mmap::after`, masked to two corners like a bubble crossing the edge).
+- Translations (km/ru/pl JSON) added for every new string; the JSON files are one entry per line (keep that format).
