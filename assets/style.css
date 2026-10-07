@@ -185,7 +185,7 @@ header.top { position: sticky; top: 12px; z-index: 50; padding-top: 12px; }
 .mmap .route.alt { stroke: #8b97a8; stroke-width: 5; }
 .mmap .bub rect { fill: #4b8df8; } .mmap .bub text { fill: #fff; font-size: 9px; font-weight: 700; }
 .mmap .car { fill: #3b8bff; stroke: #fff; stroke-width: 3; }
-.mmap .stop circle { fill: #3b8bff; stroke: #fff; stroke-width: 2.5; } .mmap .stop text { fill: #fff; font-size: 11px; font-weight: 700; }
+.mmap .stop circle { fill: #ea4335; stroke: #fff; stroke-width: 2.5; } .mmap .stop text { fill: #fff; font-size: 11px; font-weight: 700; }
 .mmap .pinred path { fill: #ea4335; stroke: #fff; stroke-width: 1.2; transform: translate(0 -6px); }
 .mmap .pins circle { fill: #2bb673; stroke: #fff; stroke-width: 2.4; } .mmap .pins path { fill: #fff; }
 .mmap .pins .sel circle { stroke-width: 3; }
@@ -440,7 +440,7 @@ html.lang-km h1, html.lang-km h2, html.lang-km h3 { line-height: 1.45; }
 .il .mp { fill: var(--map-bg); } .il .wt { fill: var(--map-water, rgba(80, 140, 200, .22)); } .il .bl { fill: var(--map-bld, rgba(120, 140, 170, .22)); }
 .il .st { stroke: var(--map-line); stroke-width: 2.6; fill: none; stroke-linecap: round; }
 .il .rt { stroke: #4b8df8; stroke-width: 2.4; fill: none; stroke-linecap: round; stroke-linejoin: round; } .il .rt.sl { stroke: #f5a623; }
-.il .stp { fill: #3b8bff; stroke: #fff; stroke-width: 1; } .il .car { fill: #3b8bff; stroke: #fff; stroke-width: 1.2; } .il .pin { fill: #ea4335; stroke: #fff; stroke-width: .6; }
+.il .stp { fill: #ea4335; stroke: #fff; stroke-width: 1; } .il .car { fill: #3b8bff; stroke: #fff; stroke-width: 1.2; } .il .pin { fill: #ea4335; stroke: #fff; stroke-width: .6; }
 .il .rb { fill: var(--glass-strong); stroke: var(--rim); stroke-width: .8; } .il .gl2 { fill: var(--text); opacity: .75; } .il .ac { fill: var(--accent); }
 .il .tl { fill: var(--chip); } .il .tx { fill: var(--text); } .il .dm { fill: var(--dim); opacity: .7; } .il .fl { fill: var(--chip); }
 .il .tm { fill: var(--text); font-weight: 200; letter-spacing: -.02em; } .il .ga { stroke: var(--text); stroke-width: 1.6; fill: none; stroke-linecap: round; }
