@@ -226,9 +226,12 @@
       tick(); setInterval(tick, 10000);
     }
 
-    /* the preview alternates between a route and the nearby chargers card */
+    /* the preview shows the app in turn: a route, other routes, the chargers (and adding one as a stop), a notification, the dock being edited */
     var scr = document.querySelector(".carscreen .screen");
-    if (scr && !reduce) setInterval(function () { scr.classList.toggle("chargers"); }, 5500);
+    if (scr && !reduce) {
+      var states = ["s-nav", "s-alt", "s-chargers", "s-chargers add", "s-notif", "s-edit"], si = 0;
+      setInterval(function () { si = (si + 1) % states.length; scr.className = "screen " + states[si]; }, 4200);
+    }
 
     /* latest version badge, from the public release (shown again after a language change re-creates the badge text) */
     var verText = "";
