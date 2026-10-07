@@ -221,8 +221,11 @@ section { padding: 52px 0; }
 .card ul { margin: .6em 0 0; padding-left: 1.1em; color: var(--dim); font-size: .97rem; }
 .card li { margin: .2em 0; }
 
-.sizes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.size { padding: 22px; text-align: center; }
+.sizes { display: grid; grid-template-columns: .8fr 1.25fr 1.5fr; gap: 16px; align-items: stretch; }
+.size { padding: 18px 18px 22px; text-align: center; margin: 0; }
+.size img { display: block; width: 100%; height: 320px; object-fit: contain; border-radius: 14px; margin: 0 0 16px; }
+.shot { margin: 0; padding: 10px; border-radius: 28px; --r: 28px; }
+.shot img { display: block; width: 100%; height: auto; border-radius: 20px; }
 .size .wf { margin: 4px auto 16px; display: grid; gap: 6px; padding: 8px; border-radius: 12px; background: var(--chip); }
 .size .wf i { display: block; border-radius: 6px; background: rgba(var(--accent-rgb), .45); }
 .size .wf i.m { background: rgba(var(--accent-rgb), .22); }
@@ -318,6 +321,7 @@ footer p { max-width: 46em; margin: 0 auto .6em; }
   .nav ul li a { padding: 12px 14px; }
   .nav .iconbtn#theme-btn { margin-left: auto; }
   .grid.f3, .grid.f2, .sizes { grid-template-columns: 1fr; }
+  .size img { height: auto; max-height: 420px; }
   .screen { grid-template-columns: 40px minmax(0, 1fr); aspect-ratio: auto; min-height: 330px; }
   .carscreen { padding: 10px; }
   .mclock, .mmusic { padding: 10px; overflow: hidden; }

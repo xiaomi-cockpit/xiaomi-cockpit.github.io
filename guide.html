@@ -11,7 +11,7 @@
 <link rel="icon" href="assets/brand/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:image" content="https://xiaomi-cockpit.github.io/assets/brand/icon-512.png">
-<link rel="stylesheet" href="assets/style.css?v=202610060241">
+<link rel="stylesheet" href="assets/style.css?v=202610071200">
 <script>
   (function () {
     try {
@@ -68,6 +68,7 @@
       <a class="sub" href="#route">Set a destination</a>
       <a class="sub" href="#banner">The turn banner</a>
       <a class="sub" href="#chargers">Nearby chargers</a>
+      <a href="#notifications">Phone notifications</a>
       <a href="#dock">The app dock</a>
       <a href="#floating">Floating return button</a>
       <a href="#settings">Settings, one by one</a>
@@ -98,17 +99,17 @@
     <ol>
       <li>On your phone, download <a href="https://github.com/xiaomi-cockpit/xiaomi-cockpit.github.io/releases/latest/download/Xiaomi-Cockpit.apk">Xiaomi-Cockpit.apk</a>.</li>
       <li>Open the file. When Android asks to allow installing from your browser or file manager, allow it. If Play Protect warns about an unknown app, choose <b>Install anyway</b>.</li>
-      <li>Open <b>Xiaomi Cockpit</b>. Choose your language and your map service (Google API, Yandex API, or a maps app of your own; you can change it later in the settings), then go through the setup screen.</li>
+      <li>Open Xiaomi Cockpit. The first start is a guided setup: your language, the permissions and your map service (Google, Yandex or None; you can change it later in the settings). For Google you also read a short screen about Google's costs, accept it and add your key.</li>
     </ol>
     <div class="tip"><p><b>Tip.</b> Installing a new version on top of the old one keeps all your settings. You never need to uninstall to update, and the app can fetch updates for you (see <a href="#updates">Updating</a>).</p></div>
     <div class="tip"><p><b>If the install fails</b> with a message about conflicting signatures or an existing package, the real Baidu app (the one with the same package name) is on the phone. Uninstall it and install again.</p></div>
 
     <h3 id="permissions">Allow what it needs</h3>
-    <p>The setup screen (and <b>Settings &gt; Setup</b>) lists what the app asks for. Each row shows <i>Allowed</i> or <i>Tap to allow</i>.</p>
+    <p>The setup guide (and <b>Settings &gt; Permissions</b>) lists what the app asks for. Each row shows <b>Allowed</b> or <b>Tap to allow</b>.</p>
     <div class="tablewrap"><table>
       <tr><th>Permission</th><th>What it is used for</th></tr>
       <tr><td><b>Display over other apps</b></td><td>The floating return button on top of other apps.</td></tr>
-      <tr><td><b>Music and navigation access</b></td><td>Notification access, so the app can read what is playing and control it.</td></tr>
+      <tr><td><b>Music and navigation access</b></td><td>Notification access, so the app can read what is playing, control it and show your phone's notifications on the dashboard.</td></tr>
       <tr><td><b>Notifications</b></td><td>A quiet notification that keeps the floating button alive.</td></tr>
       <tr><td><b>Location (speed and map)</b></td><td>Your position for the live map, speed and navigation.</td></tr>
       <tr><td><b>Calendar (next events)</b></td><td>The next events on the clock card.</td></tr>
@@ -137,17 +138,18 @@
       <tr><th>Do this</th><th>To get this</th></tr>
       <tr><td>Swipe down on the dashboard</td><td>Everything slides away and the settings button appears. Swipe back to hide it. Once a day the button peeks out for a second to remind you.</td></tr>
       <tr><td>Press and hold on an empty spot for about a second</td><td>The background picker opens. This does not work on the app dock or on the map.</td></tr>
-      <tr><td>Press and hold the all-apps button in the dock</td><td>Change which apps sit in the dock.</td></tr>
-      <tr><td>Pinch or drag the map</td><td>Zoom and move the map. A compass button appears to bring it back to your position.</td></tr>
+      <tr><td>Press and hold the dock</td><td>Edit mode: the icons wobble slowly. Drag to reorder, tap the badge to remove, tap <b>+</b> to add. Tap outside to finish.</td></tr>
+      <tr><td>Pinch, drag or turn the map</td><td>Zoom, move and, with two fingers, rotate the map. A round reset button appears (only after you moved it) to bring it back to your position.</td></tr>
       <tr><td>Swipe down on an opened dock</td><td>Closes it (portrait layout).</td></tr>
       <tr><td>Tap the cover, title or clock</td><td>Opens the music app, or the clock app. Tapping the weather opens your weather app.</td></tr>
+      <tr><td>Swipe a notification card up, or tap outside it</td><td>Dismisses the phone notification card.</td></tr>
     </table></div>
 
     <!-- ===== clock ===== -->
     <h2 id="clock">Clock and weather</h2>
     <p>The clock card shows the time in large light digits, the date on two lines, and the weather on the right: the temperature and an icon, the condition, your city and the day's high and low.</p>
     <ul>
-      <li><b>Weather</b> comes from <b>Google Weather</b> (when your Google key works for it) or from free <b>Open-Meteo</b>. With Google Weather the condition words (for example <i>Cloudy</i>) are Google's own; with Open-Meteo they are the app's. Pick your city in <b>Settings &gt; Weather</b>: type a name, tap search and choose from the list. There you also choose the <b>Weather source</b> (Automatic, Open-Meteo or Google Weather) and the <b>Update frequency</b> (every 15 minutes to every 3 hours, 30 minutes by default). Automatic uses Google when it works and Open-Meteo otherwise; if Google does not answer, a note under the row says why.</li>
+      <li><b>Weather source:</b> Weather comes from Google Weather (with the Google service) or from free Open-Meteo (with Yandex or no service). With Google Weather the condition words (for example Cloudy) are Google's own; with Open-Meteo they are the app's. Pick your city in <b>Settings &gt; Weather</b>: <b>Weather provider</b>, <b>City</b> (type a name, tap search and choose from the list), <b>Weather animation</b> and <b>Update frequency</b> (every 15 minutes to every 3 hours, 30 minutes by default). If Google Weather does not answer, a note under the provider row says why and Open-Meteo is used for now.</li>
       <li><b>Next events</b> (bottom left) lists up to three upcoming events, one per line, like <i>Today · All day · Dentist</i> or <i>Tue · 14:30 · Team meeting</i>. The first part is <i>Today</i>, then the weekday for the next days, and a date such as <i>Oct 12</i> from a week away. Long titles are cut with “…”. It needs the Calendar permission.</li>
       <li><b>Status gauge</b> (top right): the ring is the battery level, the Wi-Fi symbol inside shows Wi-Fi strength and the dots under it show mobile signal.</li>
     </ul>
@@ -157,7 +159,7 @@
     <ul>
       <li>With the <b>Light</b> theme, gloomy weather darkens the whole interface and switches the live map to its night style, and at <b>night</b> the app switches to the dark theme by itself. With <i>Follow phone</i>, <i>Dark</i> or <i>Auto (sunrise/sunset)</i> your Theme setting always wins and the weather never changes it.</li>
       <li>The glass edge glow (the accent light along a card's rim) stays on top of the sky and the rain on the clock card.</li>
-      <li>The effects are on by default. Switch everything off with <b>Settings &gt; Look and behaviour &gt; Weather effects</b>. Then the theme stays as you chose it.</li>
+      <li>The effects are on by default. Switch everything off with <b>Settings &gt; Weather &gt; Weather animation</b>. Then the theme stays as you chose it.</li>
       <li>Rain and snow only show when your city is set and the weather data is there.</li>
     </ul>
 
@@ -165,41 +167,42 @@
     <h2 id="music">Music</h2>
     <p>The music card shows what any music app is playing: the cover, the title and the artist, with previous, play / pause and next buttons.</p>
     <ul>
-      <li>When nothing is playing it says so; tap it to open your music app. Choose the app in <b>Settings &gt; Dashboard apps &gt; Default music app</b>.</li>
-      <li><b>Like button:</b> if the playing app offers a like (for example YouTube Music), a heart takes the place of the previous button. Tap to like or unlike. You can turn this off in the settings.</li>
+      <li>When nothing is playing it says so; tap it to open your music app. Choose the app in <b>Settings &gt; Music &gt; Default music app</b>.</li>
+      <li><b>Like button:</b> if the playing app offers a like (for example YouTube Music), a heart takes the place of the previous button. Tap to like or unlike.</li>
       <li><b>Progress bar:</b> the larger layouts show the elapsed time, the length and a bar you can drag to jump in the song.</li>
       <li><b>Play when connected:</b> optionally start playing by itself when the car connects (<b>Settings &gt; Look and behaviour</b>).</li>
-      <li><b>Music bars:</b> five small bars next to the title (between the title and the buttons in the phone layout) move while a song plays and rest when it is paused.</li>
+      <li><b>Accent waves:</b> soft waves in the accent colour flow behind the buttons while a song plays and fade towards the edges. The round buttons are frosted glass.</li>
       <li>With the <i>Album art</i> accent, the colours of the app follow the cover of the current song.</li>
     </ul>
     <div class="tip"><p><b>Nothing shows?</b> The music card needs <b>Music and navigation access</b>. Check that it says <i>Allowed</i> in the setup screen.</p></div>
 
     <!-- ===== map ===== -->
     <h2 id="map">Map and navigation</h2>
-    <p>The map is Google's own live map, with 3D buildings and traffic, following your car (or Yandex's map with traffic, if you choose the Yandex API service). As you speed up it zooms out smoothly; while you drive it tilts into a driving view.</p>
+    <p>The map is Google's own live map, with 3D buildings and traffic, following your car (or Yandex's map with traffic, if you choose the Yandex service). At night it switches to Google's dark map style. As you speed up it zooms out smoothly; while you drive it tilts into a driving view. Tap the expand button to make the map fill the screen.</p>
     <ul>
       <li><b>Driving view:</b> always on. The map tilts into 3D by itself once the car moves.</li>
-      <li><b>Compass button:</b> after you drag or pinch the map, this brings it back to your position.</li>
-      <li><b>Home, Work and Search</b> are the three round buttons at the top left. Home and Work start a route to the places you saved, and the magnifier lets you search anywhere. While a route runs, Home and Work go away and the magnifier becomes an <b>✕</b> (end route) next to the charger button.</li>
-      <li><b>Bolt button</b> (top right): finds nearby EV chargers, see <a href="#chargers">Nearby chargers</a>.</li>
+      <li><b>Reset button:</b> after you drag, pinch or turn the map, a round arrow brings it back to your position. It shows only after you moved the map.</li>
+      <li><b>Round buttons</b> on the left of the map: <b>Charger</b> (bolt), <b>Search</b>, <b>Voice</b> (cycles spoken guidance between silent, alerts only and guidance, Google service only), <b>View</b> (3D navigation view or north up) and <b>Settings</b> (map settings such as live traffic and satellite view). The small map card shows only Charger and Search until you expand it. While a destination is chosen or a route runs, an ✕ appears where the reset button sits.</li>
+      <li><b>Bolt button</b> (the first round button): finds nearby EV chargers, see <a href="#chargers">Nearby chargers</a>.</li>
     </ul>
-    <p>You can choose how navigation works in <b>Settings &gt; Maps &gt; Map service</b>:</p>
+    <p>Choose the service in <b>Settings &gt; Service &gt; API service</b> (the setup guide asks on the first start):</p>
     <ul>
-      <li><b>Google API</b> (recommended): routes, traffic and turn-by-turn all run inside the dashboard, using your own Google key.</li>
-      <li><b>Yandex API</b>: Yandex's live map with traffic, place search, nearby chargers and a route preview with Yandex's travel time, using your own free Yandex MapKit key. There is no turn-by-turn banner, because Yandex's free licence does not include guidance. See <a href="#yandex-key">Get a Yandex key</a>.</li>
-      <li><b>Custom Maps App</b>: the dashboard shows the live map and reads turn-by-turn, arrival time and time left from the maps app you choose (it must show a navigation notification). Home and Work open that app, and tapping the map opens it too. No routing happens in the dashboard in this mode.</li>
+      <li><b>Google</b> (recommended): the live map, search, route options, Google's own turn-by-turn guidance (Navigation SDK) and weather, all with your own Google key.</li>
+      <li><b>Yandex</b>: Yandex's live map with traffic, place search, nearby chargers and a route preview with Yandex's travel time, using your own free Yandex MapKit key. There is no turn-by-turn banner, because Yandex's free licence does not include guidance. See <a href="#yandex-key">Get a Yandex key</a>.</li>
+      <li><b>None</b>: only the live map with a compass and your position. There is no search, route or turn-by-turn, and the weather comes from Open-Meteo. The search button asks you to choose an API service first.</li>
     </ul>
 
     <h3 id="google-key">Get a Google key</h3>
-    <p>Routes, destination search, traffic times, the chargers' details and Google Weather use <b>your own</b> Google API key, so you never use anyone else's allowance. One key does it all. Google gives a free monthly allowance, and the key stays on your phone. The live map, Open-Meteo weather and OpenStreetMap chargers work without it. Pricing and allowances are Google's and can change, so check them in Google Cloud.</p>
+    <p>Routes, search, traffic times, turn-by-turn guidance, the chargers' details and Google Weather use <b>your own Google API key</b>, so you never use anyone else's allowance. One key does it all. Google gives each service a free monthly allowance and charges your own Google account above it, and the app asks for your consent before it uses anything that can cost money. The key stays on your phone. The live map itself is free. Pricing and allowances are Google's and can change, so check them in Google Cloud.</p>
     <ol>
       <li>Open <code>console.cloud.google.com</code> and sign in.</li>
       <li>Create a project and add a billing account (Google asks for a card, but the free monthly allowance is large).</li>
-      <li>In <b>APIs &amp; Services &gt; Library</b>, turn on <b>Routes API</b>, <b>Places API (New)</b>, <b>Map Tiles API</b> and <b>Weather API</b>.</li>
+      <li>In <b>APIs &amp; Services &gt; Library</b>, turn on <b>Map SDK for Android</b>, <b>Map Tiles API</b>, <b>Navigation SDK</b>, <b>Places API (New)</b>, <b>Roads API</b>, <b>Routes API</b> and <b>Weather API</b>.</li>
       <li>In <b>APIs &amp; Services &gt; Credentials</b>, create an <b>API key</b> and copy it.</li>
-      <li>In the app open <b>Settings &gt; Google key &gt; Add key</b> (the section sits right under Setup), paste the key and tap <b>Check</b>.</li>
+      <li>In the app open <b>Settings &gt; Service &gt; API status</b> and add the key (or add it in the setup guide), paste it and tap <b>Check</b>.</li>
     </ol>
-    <p><b>Check</b> tries the four services with your key. If all work, the button becomes <b>Save</b>. If something fails, the app tells you which one and what to fix (for example "Not turned on: press Enable in Google Cloud"). You can also choose <b>Save anyway</b>. The status row shows <i>Valid</i> (green), <i>Needs fixing</i> (red), <i>Not checked</i> or <i>Not added</i> (orange).</p>
+    <p><b>Check</b> tries each Google service with your key. If all work, the button becomes <b>Save</b>. If something fails, the app tells you which one and what to fix (for example "Not turned on: press Enable in Google Cloud"). You can also choose <b>Save anyway</b>. The status row shows <b>Valid</b> (green), <b>Needs fixing</b> (red), <b>Not checked</b> or <b>Not added</b> (orange).</p>
+    <p><b>Consent.</b> The first time you use Google, a glass screen explains the free allowances and the charge above them and asks you to accept. The acceptance is written to a consent log on your phone. In <b>API status</b> you can read the log, see how many guided routes you used this month and withdraw your consent: after a confirmation that removes the key from the phone and the Google services stop.</p>
     <div class="tip"><p><b>Tip.</b> If you restrict the key to Android apps in Google Cloud, enter the app's package name and its SHA-1 fingerprint. A key without restrictions is simpler but anyone who gets it can use it, so keep it private.</p></div>
 
     <h3 id="yandex-key">Get a Yandex key</h3>
@@ -207,33 +210,44 @@
     <ol>
       <li>Open <code>yandex.com/maps-api/console</code> and sign in (create a Yandex account first if you do not have one).</li>
       <li>Tap <b>Connect</b> on <b>MapKit SDK</b>. A key is created for you; copy it.</li>
-      <li>In the app open <b>Settings &gt; Maps</b>, choose <b>Map service &gt; Yandex API</b>, tap <b>Yandex key &gt; Add key</b>, paste the key and tap <b>Save</b>. The map reloads with the new key by itself.</li>
+      <li>In the app open <b>Settings &gt; Service</b>, choose <b>API service &gt; Yandex</b> and add the key in the setup guide or in <b>API status</b>, then tap <b>Save</b>. The map reloads with the new key by itself.</li>
     </ol>
-    <p>The <b>Yandex key status</b> row shows <i>Valid</i> (green) once the map has loaded with the key, <i>Not working yet</i> (red) if it has not loaded, and <i>Not checked</i> or <i>Not added</i> (orange). A newly created key can take some time, sometimes 15 minutes or more, before the map loads. Once the key is valid, the <b>How to get a key</b> row goes away.</p>
+    <p>The <b>Yandex key</b> (<b>API status</b>) row shows <i>Valid</i> (green) once the map has loaded with the key, <i>Not working yet</i> (red) if it has not loaded, and <i>Not checked</i> or <i>Not added</i> (orange). A newly created key can take some time, sometimes 15 minutes or more, before the map loads. Once the key is valid, the <b>How to get a key</b> row goes away.</p>
 
     <h3 id="route">Set a destination</h3>
     <ol>
-      <li>Tap <b>Home</b> or <b>Work</b>, or tap <b>Set destination</b> / the magnifier.</li>
+      <li>Tap the magnifier (<b>Search</b>). A card opens at the top with <b>Home</b>, <b>Work</b> and a search field.</li>
       <li>Type a place or an address. Results appear while you type, nearest to your car first. Tap one.</li>
-      <li>The route is drawn on the map, coloured by traffic: blue is normal, orange is slow and red is a jam.</li>
-      <li>To stop, tap <b>End route</b> (or the ✕ button in landscape).</li>
+      <li>The destination card shows the time and distance with <b>Start</b>, the alternative-routes button and <b>+</b> to add a stop. The route is drawn on the map, coloured by traffic: blue is normal, orange is slow and red is a jam.</li>
+      <li>To stop, tap the ✕ button on the map (it takes the place of the reset button while a destination is chosen or a route runs).</li>
+      <li><b>Alternative routes:</b> the other routes are drawn on the map in grey. Tap one to choose it; a small bubble says how many minutes faster or slower it is.</li>
+      <li><b>Stops:</b> tap <b>+</b> to add up to four stops. Tap the trip card to edit the trip: drag the stops into order or remove them.</li>
     </ol>
     <p>With the <b>Yandex API</b> service the route is drawn with Yandex's traffic colours and travel time (a bubble shows the minutes), but the app does not guide you turn by turn.</p>
-    <p>To set <b>Home</b> and <b>Work</b>, open <b>Settings &gt; Maps</b> and tap the row. You can <b>pick on the map</b>, <b>paste a map link</b> (from Google Maps, Apple Maps, Waze, Amap, OpenStreetMap and others), <b>type an address</b>, or clear it. A spot picked on the map is exact.</p>
+    <p>To set <b>Home</b> and <b>Work</b>, open <b>Settings &gt; Map</b> and tap the row. You can <b>pick on the map</b>, <b>paste a map link</b> (from Google Maps, Apple Maps, Waze, Amap, OpenStreetMap and others), <b>type an address</b>, or clear it. A spot picked on the map is exact.</p>
 
-    <p><b>Route overview.</b> When you set a destination while the car stands still, the map first zooms out to show the whole way, clear of the turn banner. It zooms in and follows you once you start driving (8 km/h or more) or when you touch the map. Re-routing does not zoom out again. <b>Settings &gt; Maps &gt; Live traffic update</b> chooses how often the route's traffic colours and arrival time refresh (every 30 seconds, 1 minute, 2 minutes by default or 5 minutes); each refresh is one route request to Google, so a faster setting uses more of your free allowance. A refresh keeps the blue line where it is and only updates the colours and times. If a clearly faster route exists, a small card offers it with <b>Switch</b>. If you leave the route, or drive the wrong way along it, the app finds a new route at once that goes on ahead of you.</p>
+    <p><b>Route overview.</b> When you pick a destination while the car stands still, the map first zooms out to show the whole way, clear of the cards. It zooms in and follows you once you start driving or when you touch the map. Re-routing does not zoom out again. If you leave the route, guidance finds a new one at once. With Yandex, <b>Settings &gt; Map &gt; Live traffic update</b> chooses how often the route's traffic colours and travel time refresh.</p>
 
     <h3 id="banner">The turn banner</h3>
-    <p>While you drive a route, a glass banner at the top left of the map shows the turn symbol in its corner with the distance to the next turn in large figures under it, and beside them the instruction with the street name in bold (roundabouts and U-turns have their own symbols) and a small line with the arrival time, the time left and the distance left. The banner grows to the right to fit the text, never down over the map. A round bubble in the corner shows the minutes left. If you leave the route, the app finds a new one by itself.</p>
+    <p>While you drive a route, a frosted glass banner at the top of the map shows Google's own guidance: the turn arrow, the distance to the next turn in large figures, the instruction with the street name and, when another turn follows closely, a small <b>Then</b> line with its icon. A line shows the arrival time, the time left and the distance left. A frosted card at the bottom shows the minutes left with the ✕ (end route), alternatives and + (add stop) buttons. If you leave the route, the app finds a new one by itself. Turn-by-turn needs the Google service: Yandex and None show no banner.</p>
 
     <h3 id="chargers">Nearby chargers</h3>
-    <p>Tap the <b>bolt</b> button at the top right of the live map (Google's or Yandex's map). The button grows into a small card, the other buttons step aside and the map moves so you and the charger you are looking at stay clear of the card.</p>
+    <p>Tap the bolt button, the first of the round buttons on the live map. Green charger pins appear around you and the nearest charger is chosen at once. A card shows its name, the distance and drive time, every connector type known for the station (like CCS2 · GB/T) and where it is, smallest area first, for example Nirouth · Chbar Ampov · Phnom Penh. A part that is not known is simply left out.</p>
     <ul>
-      <li>The <b>15 closest chargers</b> are listed, wherever they are (there is no distance limit, so in a remote area they can be in the next district or province), with the <b>quickest to reach first</b>. The card shows the name, the distance and drive time, every connector type known for the station (like <i>CCS2 · GB/T</i>) and where it is, smallest area first, for example <i>Nirouth · Chbar Ampov · Phnom Penh</i>. A part that is not known is simply left out.</li>
-      <li>The <b>arrows</b> step through the chargers. The map zooms to show you, the charger and the blue route between, and the other chargers as small dots.</li>
-      <li><b>Go</b> starts the route to that charger and the card shrinks back into the button. <b>✕</b> closes it without a route.</li>
+      <li>The 15 closest chargers are found, wherever they are (there is no distance limit, so in a remote area they can be in the next district or province), with the quickest to reach first.</li>
+      <li>A bar at the bottom steps through the other stations with arrows. The map zooms to show you, the charger and the blue route between, and the other chargers as pins.</li>
+      <li><b>Go</b> starts the route to the chosen charger. The ✕ where the reset button sits cancels your choice.</li>
       <li>With your Google key the list comes from Google Places with the connector types; without a key, or when Google finds nothing, it comes from OpenStreetMap, which often has less detail (a station may then show no connector types).</li>
-      <li>With a <i>Custom Maps App</i> the charger is opened in that app.</li>
+      <li><b>While you drive a route</b>, the bolt button hides the route for a moment and the card says <b>Add</b>: the charger becomes a stop before your destination and the route is recalculated. If you cancel, the old route comes back.</li>
+    </ul>
+
+    <!-- ===== notifications ===== -->
+    <h2 id="notifications">Phone notifications</h2>
+    <p>With <b>Notification access</b> allowed, a frosted glass card slides in at the top of the dashboard when your phone gets a notification, so you can see it on the car screen.</p>
+    <ul>
+      <li>Swipe the card up, or tap outside it, to dismiss it. Touches do not go through the card to the map below.</li>
+      <li>Turn it off in <b>Settings &gt; Look and behaviour &gt; Show phone notifications on the dashboard</b>.</li>
+      <li>The text is read on the phone only and is never sent anywhere.</li>
     </ul>
 
     <!-- ===== dock ===== -->
@@ -241,8 +255,7 @@
     <p>The dock holds your favourite apps. Tapping one opens it on the same screen the dashboard is on, so on the car screen the app opens on the car.</p>
     <ul>
       <li><b>All apps:</b> the last button opens a sheet with every app on the phone.</li>
-      <li><b>Change the dock:</b> press and hold the all-apps button (or tap the plus button when the dock is empty), then tick the apps you want. The picker has search and shows the app icons.</li>
-      <li><b>App names:</b> you can show names under the icons in <b>Settings &gt; Look and behaviour</b>.</li>
+      <li><b>Edit the dock:</b> press and hold the dock. The icons wobble slowly. Drag to reorder, tap the round badge at the top right of an icon to remove it, and tap the <b>+</b> button at the end to add apps (the list has search and app icons). Tap outside the dock, or open <b>All apps</b>, to finish.</li>
     </ul>
 
     <!-- ===== floating ===== -->
@@ -261,12 +274,12 @@
     <p>Open the settings by swiping down on the dashboard and tapping the gear. Use the back button to return; there is nothing to save.</p>
     <div class="tablewrap"><table>
       <tr><th>Section</th><th>What is in it</th></tr>
-      <tr><td><b>Setup</b></td><td>Every permission and its state, and a shortcut to App info. See <a href="#permissions">Allow what it needs</a>.</td></tr>
-      <tr><td><b>Google key</b></td><td>Your Google key and its status (<i>Valid</i> in green, <i>Needs fixing</i> in red, <i>Not checked</i> and <i>Not added</i> in orange), add or edit it, and a guide to get one. One key serves routes, search, chargers, map tiles and weather. See <a href="#google-key">Get a Google key</a>.</td></tr>
-      <tr><td><b>Weather</b></td><td>Tap <b>City</b> to search for it and choose it, then the <b>Weather source</b> and the <b>Update frequency</b>.</td></tr>
-      <tr><td><b>Maps</b></td><td>Map service (Google API, Yandex API or Custom Maps App; you choose it on the first start), with the Yandex API the <b>Yandex key status</b> and <b>Yandex key</b>, <b>Live traffic update</b>, <b>Home</b> and <b>Work</b>, and <b>3D buildings</b>. With a custom maps app: which app to use.</td></tr>
-      <tr><td><b>Dashboard apps</b></td><td>Choose the dock apps, and the default music, clock, calendar and weather apps (Automatic works for most people).</td></tr>
-      <tr><td><b>Look and behaviour</b></td><td>Theme, background, animated background, accent colour, glass effects, music options, floating button options and language. See <a href="#look">Looks and themes</a>.</td></tr>
+      <tr><td><b>Permissions</b></td><td>Every permission and its state, and a shortcut to App info. See <a href="#permissions">Allow what it needs</a>.</td></tr>
+      <tr><td><b>Service</b></td><td><b>API service</b> (Google, Yandex or None) and <b>API status</b>: your key and its state (<i>Valid</i> in green, <i>Needs fixing</i> in red, <i>Not checked</i> and <i>Not added</i> in orange), the consent log, the guided-route count and withdrawing your consent. See <a href="#google-key">Get a Google key</a>.</td></tr>
+      <tr><td><b>Weather</b></td><td><b>Weather provider</b>, <b>City</b>, <b>Weather animation</b> and <b>Update frequency</b>.</td></tr>
+      <tr><td><b>Map</b></td><td><b>Home</b> and <b>Work</b> and, with Yandex, <b>Live traffic update</b>.</td></tr>
+      <tr><td><b>Music</b></td><td>The <b>Default music app</b>. The dock apps are set on the dashboard itself: press and hold the dock.</td></tr>
+      <tr><td><b>Look and behaviour</b></td><td><b>Language</b>, <b>Theme</b>, <b>Background</b>, <b>Animated background</b>, <b>Accent colour</b>, <b>Play music when connected to car</b>, <b>Show phone notifications on the dashboard</b>, <b>Floating home button</b> and <b>Power saver</b>. See <a href="#look">Looks and themes</a>.</td></tr>
       <tr><td><b>Updates</b></td><td>The installed version, <b>Check for updates</b>, and <b>Check for updates automatically</b>. See <a href="#updates">Updating</a>.</td></tr>
       <tr><td><b>Support</b></td><td><b>Report a problem</b> and <b>Request a feature</b>: send a description, screenshots and the app log. See <a href="#report">Report a problem</a>.</td></tr>
       <tr><td><b>Diagnostics</b></td><td>Technical details such as the build number, the package name, the Android version and the state of the map, route, place and weather services. Useful when asking for help.</td></tr>
@@ -279,10 +292,10 @@
       <li><b>Background:</b> the colour styles <i>Cockpit</i>, <i>Dusk</i>, <i>Forest</i>, <i>Graphite</i> and <i>Slate</i>, or <i>My photo</i> from your gallery. A press and hold on an empty spot of the dashboard opens the picker too.</li>
       <li><b>Animated background:</b> soft moving light and large colour bubbles behind the glass (not used with a photo).</li>
       <li><b>Accent colour:</b> Mint, Sky, Violet, Pink, Orange, Yellow, Red, Lime, a custom colour, or <i>Album art</i> to follow the song.</li>
-            <li><b>Weather effects:</b> the sky, rain, snow and lightning, and (with the Light theme only) the gloomy look and the automatic dark theme at night.</li>
+            <li><b>Weather animation</b> (in <b>Settings &gt; Weather</b>): the sky, rain, snow and lightning, and (with the Light theme only) the gloomy look and the automatic dark theme at night.</li>
       <li><b>Power saver:</b> turns off the animated background, the weather effects and the 3D buildings and updates the map less often. It also switches on by itself while the phone's battery saver is on or the phone is hot.</li>
       <li>The <b>glass shadow</b> under the panels and the <b>glass edge refraction</b> (Android 13 and newer: the rim of each panel, and of the live map, picks up the accent light of the bubbles behind it) are always on.</li>
-      <li><b>Like button in music controls</b>, <b>Play music when connected to car</b>, <b>Show app names under shortcuts</b>.</li>
+      <li><b>Play music when connected to car</b>, <b>Show phone notifications on the dashboard</b>, <b>Floating home button</b>.</li>
       <li><b>Language:</b> English, Khmer, Russian or Polish.</li>
     </ul>
 
@@ -293,11 +306,11 @@
     <details class="faq glass"><summary>A permission switch is greyed out</summary><div class="a"><p>Open <b>App info</b>, tap the three dots at the top and choose <b>Unlock permissions</b>, then try the switch again.</p></div></details>
     <details class="faq glass"><summary>Music or the track title does not show</summary><div class="a"><p>Check <b>Music and navigation access</b>. Start a song in your music app and give it a few seconds. Some apps do not offer a like button; then the previous button stays.</p></div></details>
     <details class="faq glass"><summary>The map says "Allow location to show the map"</summary><div class="a"><p>Allow <b>Location</b> in the setup screen and, for the car screen, check that the phone has a GPS fix (go outside or near a window).</p></div></details>
-    <details class="faq glass"><summary>Home, Work or "Set destination" asks for a Google key</summary><div class="a"><p>These need your own key. Follow <a href="#google-key">Get a Google key</a>. If Check reports a problem, fix the item it names (usually turning on one of the four APIs or adding a billing account).</p></div></details>
-    <details class="faq glass"><summary>The Yandex map is black or says it is not loading</summary><div class="a"><p>A newly created Yandex key can take 15 minutes or more before it works; wait a little and look at <b>Yandex key status</b> in <b>Settings &gt; Maps</b>. Check the internet connection and that the key was copied completely. If it stays red, create the key again in the Yandex console (<a href="#yandex-key">Get a Yandex key</a>).</p></div></details>
-    <details class="faq glass"><summary>"Finding the route…" never finishes</summary><div class="a"><p>Check the internet connection on the phone and the key status in <b>Settings &gt; Google key</b>. Press <b>Check</b> again to see which service fails.</p></div></details>
-    <details class="faq glass"><summary>The weather is empty</summary><div class="a"><p>Choose your city in <b>Settings &gt; Weather</b>, and check the phone has internet. If you chose Google Weather and it does not answer, a note under <b>Weather source</b> says why (often the Weather API is not turned on for your key); the app then uses Open-Meteo.</p></div></details>
-    <details class="faq glass"><summary>Nearby chargers shows nothing, or too few</summary><div class="a"><p>Check the internet connection and that <b>Location</b> is allowed. Without a Google key the list comes from OpenStreetMap, which may know fewer stations in your area. With a key, make sure <b>Places API (New)</b> is turned on (<b>Check</b> in <b>Settings &gt; Google key</b> tells you). Use <b>Report</b> in the settings while the card is open if it still shows nothing.</p></div></details>
+    <details class="faq glass"><summary>Home, Work or search asks for a Google key</summary><div class="a"><p>These need your own key. Follow <a href="#google-key">Get a Google key</a>. If <b>Check</b> reports a problem, fix the item it names (usually turning on one of the APIs or adding a billing account).</p></div></details>
+    <details class="faq glass"><summary>The Yandex map is black or says it is not loading</summary><div class="a"><p>A newly created Yandex key can take 15 minutes or more before it works; wait a little and look at <b>Yandex key</b> in <b>Settings &gt; Service &gt; API status</b>. Check the internet connection and that the key was copied completely. If it stays red, create the key again in the Yandex console (<a href="#yandex-key">Get a Yandex key</a>).</p></div></details>
+    <details class="faq glass"><summary>"Finding the route…" never finishes</summary><div class="a"><p>Check the internet connection on the phone and the key status in <b>Settings &gt; Service &gt; API status</b>. Press <b>Check</b> again to see which service fails.</p></div></details>
+    <details class="faq glass"><summary>The weather is empty</summary><div class="a"><p>Choose your city in <b>Settings &gt; Weather</b>, and check the phone has internet. If you chose Google Weather and it does not answer, a note under <b>Weather provider</b> says why (often the Weather API is not turned on for your key); the app then uses Open-Meteo.</p></div></details>
+    <details class="faq glass"><summary>Nearby chargers shows nothing, or too few</summary><div class="a"><p>Check the internet connection and that Location is allowed. Without a Google key the list comes from OpenStreetMap, which may know fewer stations in your area. With a key, make sure Places API (New) is turned on (<b>Check</b> in <b>Settings &gt; Service &gt; API status</b> tells you). Use Report in the settings while the card is open if it still shows nothing.</p></div></details>
     <details class="faq glass"><summary>The update does not install</summary><div class="a"><p>The first time, Android asks you to allow this app to install apps: tap <b>Open settings</b>, switch on <b>Allow from this source</b>, come back and tap <b>Update now</b> again. If the download fails, check the internet connection. You can always download the newest APK from the <a href="#updates">Updating</a> section and install it over the old one.</p></div></details>
     <details class="faq glass"><summary>Something else is wrong, or it still does not work</summary><div class="a"><p>Use <a href="#report">Report a problem</a> in the settings. Add a screenshot and keep the log on, then it is much easier to find the cause.</p></div></details>
     <details class="faq glass"><summary>The layout looks too big or too small on the car</summary><div class="a"><p>The app scales each car layout so it matches the phone. If it still looks off on your car, send a photo of the screen and the car model so it can be tuned.</p></div></details>
@@ -337,7 +350,7 @@
   </div>
 </footer>
 
-<script src="assets/i18n.js?v=202610060241" defer></script>
-<script src="assets/site.js?v=202610060241" defer></script>
+<script src="assets/i18n.js?v=202610071200" defer></script>
+<script src="assets/site.js?v=202610071200" defer></script>
 </body>
 </html>

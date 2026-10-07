@@ -15,7 +15,7 @@
 <link rel="icon" href="assets/brand/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:image" content="https://xiaomi-cockpit.github.io/assets/brand/icon-512.png">
-<link rel="stylesheet" href="assets/style.css?v=202610060241">
+<link rel="stylesheet" href="assets/style.css?v=202610071200">
 <script>
   /* set the theme before the page paints, so there is no flash */
   (function () {
@@ -73,63 +73,11 @@
       </div>
     </div>
 
-    <!-- a drawn preview of the dashboard on the car screen -->
-    <div class="reveal" aria-hidden="true">
-      <div class="carscreen glass strong">
-        <div class="screen">
-          <div class="mdock glass">
-            <i style="--c:#ea4335"></i><i style="--c:#4285f4"></i><i style="--c:#ff0033"></i><i style="--c:#34a853"></i><i style="--c:#fbbc04"></i><i style="--c:#a78bfa"></i><i></i>
-          </div>
-          <div class="mmain">
-            <div class="mtop">
-            <div class="mmusic glass">
-              <div class="row"><div class="cover"></div><div><div class="ttl">Echoes</div><div class="art">Lăn Từ</div></div></div>
-              <div>
-                <div class="prog"><i></i></div>
-                <div class="ctrl">
-                  <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-heart"/></svg>
-                  <span class="pl"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke-width="3"/></svg></span>
-                  <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M14 12L5 6v12z"/></svg>
-                </div>
-              </div>
-            </div>
-            <div class="mclock glass">
-              <div class="mc-top"><span class="tiny">Saturday</span>
-                <svg class="gauge" viewBox="0 0 40 40" aria-hidden="true"><path d="M9.5 29.5A15 15 0 1 1 30.5 29.5" class="ring"/><path d="M13.5 19.5a9.5 9.5 0 0 1 13 0M16 23a6 6 0 0 1 8 0" class="wifi"/><circle cx="20" cy="26.2" r="1.5"/><g class="dots"><circle cx="14" cy="33" r="1.5"/><circle cx="18" cy="34.4" r="1.5"/><circle cx="22" cy="34.4" r="1.5"/><circle cx="26" cy="33" r="1.5"/></g></svg></div>
-              <div class="t" id="mock-time">10:28</div>
-              <div class="w"><span>28° Cloudy</span><span>H 32° L 25°</span></div>
-              <div class="ev1">Today · All day · Dentist</div>
-            </div>
-            </div>
-            <div class="mmap">
-            <svg class="streets" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice">
-              <path class="street" d="M-10 60 L420 100"/><path class="street" d="M-10 160 L420 140"/>
-              <path class="street" d="M90 -10 L110 220"/><path class="street" d="M270 -10 L300 220"/>
-              <path class="street" d="M-10 20 L170 90 L420 70"/>
-              <g class="routeg"><path class="route" d="M110 220 L130 150 L240 128"/><path class="route slow" d="M240 128 L275 70"/><path class="route jam" d="M275 70 L310 52"/><path class="route" d="M310 52 L350 40"/></g>
-              <g class="pins"><g transform="translate(180 60)"><circle r="9"/><path d="M1.5-5.5L-3 .8h3L-1.5 5.5 3-.8H0z"/></g><g transform="translate(330 150)"><circle r="9"/><path d="M1.5-5.5L-3 .8h3L-1.5 5.5 3-.8H0z"/></g><g transform="translate(60 100)"><circle r="9"/><path d="M1.5-5.5L-3 .8h3L-1.5 5.5 3-.8H0z"/></g></g>
-              <g transform="translate(130 150)"><circle class="car" r="10"/><path d="M0-6 L5 5 L0 2 L-5 5Z" fill="#06222b"/></g>
-            </svg>
-            <div class="mbanner glass">
-              <span class="turn"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 20V10a4 4 0 0 1 4-4h5"/><path d="M15 3l3 3-3 3"/></svg></span>
-              <div><b>350 m</b><span>Turn right onto Main Street</span><span>10:42 · 14 min · 6.2 km</span></div>
-            </div>
-            <div class="mbtns">
-              <span class="rb glass x"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
-              <span class="rb glass bolt"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-bolt"/></svg></span>
-            </div>
-            <div class="eta glass"><div>14<small>min</small></div></div>
-            <div class="evcard glass">
-              <div class="evh"><b>Nirouth Charging</b><span class="evc">2 / 15</span></div>
-              <div class="evm">4 min · 2.1 km</div>
-              <div class="evm dim">CCS2 · GB/T</div>
-              <div class="evp">Nirouth · Chbar Ampov · Phnom Penh</div>
-              <div class="evb"><span class="go">Go</span></div>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
+    <!-- a screenshot of the dashboard on the compact car screen -->
+    <div class="reveal">
+      <figure class="shot glass strong">
+        <img src="assets/screenshots/size2.webp?v=2" width="1500" height="1194" alt="Xiaomi Cockpit on the car screen: music, clock and weather, and a live map with turn-by-turn guidance" fetchpriority="high">
+      </figure>
     </div>
   </div>
 
@@ -144,17 +92,17 @@
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-clock"/></svg></span>Clock and weather</h3>
         <p>A big light clock, the date, live weather with the day's high and low, and your next three calendar events. A small gauge shows battery, Wi-Fi and mobile signal. Weather comes from Google Weather or free Open-Meteo, your choice.</p></article>
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-music"/></svg></span>Music</h3>
-        <p>Shows what is playing in any music app: cover art, title, progress you can drag, previous, play and next, and a like button when the app supports it. Small animated music bars sit next to the title, and the accent colour can follow the album cover.</p></article>
+        <p>Shows what is playing in any music app: cover art, title, progress you can drag, previous, play and next, and a like button when the app supports it. The buttons are frosted glass, soft accent-coloured waves flow behind them, and the accent colour can follow the album cover.</p></article>
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-map"/></svg></span>Live map</h3>
-        <p>Google's map with 3D buildings and live traffic follows your car. In Russia and nearby you can choose Yandex's map with traffic instead. It zooms out as you speed up, tilts when you drive, and you can pinch, drag and snap back to your position.</p></article>
+        <p>Google's map with 3D buildings and live traffic follows your car, in a dark night style after sunset. In Russia and nearby you can choose Yandex's map instead. It zooms out as you speed up, tilts when you drive, and you can pinch, drag, turn it with two fingers and snap back to your position. Expand it to fill the whole screen.</p></article>
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-route"/></svg></span>Navigation</h3>
-        <p>Pick Home, Work, search a place or choose a spot on the map. A new route first shows the whole way, then zooms in as you start driving. See the route coloured by live traffic, a turn-by-turn banner with the street name, time left and arrival time, with fast automatic re-routing. With the Yandex map you get the route and its travel time, but no turn-by-turn, because Yandex's free licence does not include it.</p></article>
+        <p>Search a place (results appear while you type), pick Home or Work, or choose a spot on the map. See the route options with live traffic times, add up to four stops and choose an alternative right on the map. Guidance is Google's own: the same turn arrows and instructions as Google Maps, including the "Then" hint, with distance, time left and arrival time and fast automatic re-routing. A frosted card at the bottom keeps the trip at hand. With the Yandex map you get the route and its travel time, but no turn-by-turn, because Yandex's free licence does not include it.</p></article>
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-weather"/></svg></span>Weather you can see</h3>
         <p>A sky in the clock card, rain that runs down the glass in drops, snow that piles up on the cards and storms with lightning. In gloomy weather the light theme turns gloomy too, and at night the Light theme goes dark by itself (Follow phone, Dark and Auto always do what you chose). The glass edge glow stays on top of the sky. Switch it off in the settings if you prefer a plain look.</p></article>
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-bolt"/></svg></span>Nearby EV chargers</h3>
-        <p>Tap the bolt on the map and the cockpit finds chargers around you, the quickest to reach first. Step through them with the arrows, see the way on the map with power and connector types, and tap Go to start the route.</p></article>
+        <p>Tap the bolt on the map and green charger pins appear around you, with the nearest one chosen at once. Step through the others with the bar at the bottom, see power and connector types, and tap Go. While you are driving, the bolt adds the charger as a stop before your destination, and cancelling brings the old route back.</p></article>
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-apps"/></svg></span>App dock</h3>
-        <p>Your favourite apps one tap away, opened on the car screen. Tap the all-apps button to see every app, search them, and long-press to change the shortcuts.</p></article>
+        <p>Your favourite apps one tap away, opened on the car screen. Tap the all-apps button to see every app and search them. Press and hold the dock to edit it: the icons wobble, drag to reorder, tap the badge to remove, and add more with the plus button.</p></article>
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-gauge"/></svg></span>Floating return button</h3>
         <p>When you open another app on the car screen, a small glass button stays on top. Tap it to come straight back to the cockpit. Drag it anywhere you like.</p></article>
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-glass"/></svg></span>Liquid glass design</h3>
@@ -163,6 +111,12 @@
         <p>One layout for the phone and two for the car: a compact landscape and a roomy full screen. Sizes are scaled so buttons and text look the same on each.</p></article>
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-globe"/></svg></span>Your language</h3>
         <p>English, Khmer, Russian and Polish, including dates, units, the map and the turn-by-turn directions. More can be added.</p></article>
+      <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-alert"/></svg></span>Phone notifications</h3>
+        <p>A frosted glass card shows your phone's notifications on the car screen. Swipe it up or tap outside to dismiss it, or turn it off in the settings.</p></article>
+      <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-gear"/></svg></span>Guided setup</h3>
+        <p>The first start walks you through language, permissions and your map service, with a clear screen about Google's costs and the key you need. You can run it again from the settings whenever you like.</p></article>
+      <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-shield"/></svg></span>Private by design</h3>
+        <p>No account, no advertising, no analytics. Your keys and settings stay on your phone, Google's costs need your consent first, and the privacy page lists everything that is sent and to whom.</p></article>
       <article class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-wrench"/></svg></span>Report and request</h3>
         <p>Something wrong, or an idea? Send a report or a feature request from the settings in a few taps, with screenshots and the log. You can follow it on GitHub afterwards.</p></article>
     </div>
@@ -176,18 +130,18 @@
       <p>The app looks at the window it is shown in and arranges the cards to fit. Nothing scrolls; everything stays within reach.</p>
     </div>
     <div class="sizes">
-      <div class="size glass reveal">
-        <div class="wf" style="width:96px;grid-template-rows:20px 38px 22px 14px"><i></i><i class="m"></i><i></i><i class="m"></i></div>
+      <figure class="size glass reveal">
+        <img src="assets/screenshots/size1.webp?v=2" width="900" height="1763" alt="Portrait layout: clock, live map, music and the app row stacked top to bottom" loading="lazy">
         <h3>Phone and tall windows</h3><p>Clock, live map, music and the app row stacked top to bottom.</p>
-      </div>
-      <div class="size glass reveal">
-        <div class="wf" style="width:150px;grid-template-columns:14px 1fr 1fr;grid-template-rows:32px 40px"><i class="m" style="grid-row:1/3"></i><i></i><i></i><i class="m" style="grid-column:2/4"></i></div>
+      </figure>
+      <figure class="size glass reveal">
+        <img src="assets/screenshots/size2.webp?v=2" width="1500" height="1194" alt="Compact car screen layout: apps on the left, music and clock on top, a wide map below" loading="lazy">
         <h3>Compact car screen</h3><p>Apps on the left, music and clock on top, the map as one wide box below.</p>
-      </div>
-      <div class="size glass reveal">
-        <div class="wf" style="width:168px;grid-template-columns:14px 1fr 46px;grid-template-rows:34px 34px"><i class="m" style="grid-row:1/3"></i><i class="m" style="grid-row:1/3"></i><i></i><i></i></div>
+      </figure>
+      <figure class="size glass reveal">
+        <img src="assets/screenshots/size3.webp?v=2" width="1500" height="938" alt="Full car screen layout: apps on the left, a big map in the middle, clock above music on the right" loading="lazy">
         <h3>Full car screen</h3><p>Apps on the left, a big map in the middle, clock above a full music player on the right.</p>
-      </div>
+      </figure>
     </div>
   </section>
 
@@ -227,7 +181,7 @@
           <li>The real Baidu app must not be installed on the phone (see the FAQ).</li>
         </ul></div>
       <div class="card glass reveal"><h3><span class="badge"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-key"/></svg></span>Optional: a Google key</h3>
-        <p>The live map works right away. For routes, destination search, traffic times, chargers and Google Weather you add your own Google API key once in the settings. Weather works without it too. The guide shows every click.</p>
+        <p>The live map works right away. For routes, destination search, traffic times, turn-by-turn guidance, chargers and Google Weather you add your own Google API key once. Weather works without it too. The setup guide and the user guide show every click.</p>
         <p style="margin-top:.6em"><a href="guide.html#google-key">How to get a key</a></p>
         <p style="margin-top:.6em">Prefer Yandex maps? Add a free Yandex MapKit key instead: <a href="guide.html#yandex-key">how to get a Yandex key</a>.</p></div>
     </div>
@@ -235,13 +189,13 @@
     <ol class="steps" style="list-style:none;margin:0;padding:0">
       <li class="step glass reveal"><span class="n"></span><div><h3>Download the APK on your phone</h3><p>Tap the download button above in your phone's browser. If your browser warns that this type of file can be harmful, choose to keep it. It is an app file that does not come from a store.</p></div></li>
       <li class="step glass reveal"><span class="n"></span><div><h3>Install it</h3><p>Open the downloaded file. Android asks you to allow installing apps from this source: allow it, then tap Install. If Play Protect asks, choose <b>Install anyway</b>. Installing a newer version over an old one keeps your settings, and the app can fetch and install updates itself (<b>Settings &gt; Updates</b>).</p></div></li>
-      <li class="step glass reveal"><span class="n"></span><div><h3>Open the app and choose your language</h3><p>The first start asks for a language and for your map service (Google API, Yandex API or a maps app of your own), and then opens the setup screen. You can change both later in the settings.</p></div></li>
+      <li class="step glass reveal"><span class="n"></span><div><h3>Open the app and choose your language</h3><p>The first start is a guided setup: your language, the permissions, then your map service (Google, Yandex or None) with a short screen about Google's costs and your key. You can change all of it later in the settings.</p></div></li>
       <li class="step glass reveal"><span class="n"></span><div><h3>Allow what the app needs</h3>
         <p>On the setup screen tap each row and allow it:</p>
         <ul><li><b>Display over other apps</b>: for the floating return button.</li><li><b>Music and navigation access</b>: so the app can show what is playing.</li><li><b>Notifications</b>, <b>Location</b> (speed and map) and <b>Calendar</b> (next events).</li></ul>
         <p>If a switch is greyed out, open <b>App info</b>, tap the three-dot menu and choose <b>Unlock permissions</b>, then try again. On HyperOS also turn on <b>Autostart</b>, set <b>Battery saver</b> to <b>No restrictions</b>, and allow <b>Display pop-up windows</b> and <b>Chain start</b>.</p></div></li>
       <li class="step glass reveal"><span class="n"></span><div><h3>Connect to the car</h3><p>Connect your phone to the car with Xiaomi interconnectivity (required for the car screen) and open Xiaomi Cockpit from the app list on the car screen, or pin it to the car's home screen. The dashboard fits the window it is shown in.</p></div></li>
-      <li class="step glass reveal"><span class="n"></span><div><h3>Set your city and your places</h3><p>Open the settings (swipe down on the dashboard and tap the gear). Add your Google key if you have one, choose your city for the weather, set <b>Home</b> and <b>Work</b>, and pick your dock apps. The <a href="guide.html">user guide</a> explains every setting.</p></div></li>
+      <li class="step glass reveal"><span class="n"></span><div><h3>Set your city and your places</h3><p>Open the settings (swipe down on the dashboard and tap the gear). Choose your city for the weather and set <b>Home</b> and <b>Work</b>. Add and arrange your dock apps on the dashboard itself by pressing and holding the dock. The <a href="guide.html">user guide</a> explains every setting.</p></div></li>
     </ol>
   </section>
 
@@ -251,8 +205,8 @@
     <details class="faq glass reveal"><summary>Does it work without Xiaomi interconnectivity?</summary><div class="a"><p>Only on the phone. Without interconnectivity the app can be opened on your phone, but it cannot be shown on the car screen. To use it in the car you need a supported Xiaomi phone in the Chinese region that can connect to the car with Xiaomi interconnectivity.</p></div></details>
     <details class="faq glass reveal"><summary>Is it free? Is there an account or advertising?</summary><div class="a"><p>It is free, community built, and has no account and no advertising.</p></div></details>
     <details class="faq glass reveal"><summary>Why does the app use the package name com.baidu.searchbox?</summary><div class="a"><p>The car only lists apps it knows. Xiaomi Cockpit uses a package name the car already accepts so it can appear on the car screen. The side effect is that it cannot be on the real Baidu app's phone at the same time: if the real Baidu app is installed, Android refuses the install with a "conflicting signatures" message. Uninstall the Baidu app first.</p></div></details>
-    <details class="faq glass reveal"><summary>Do I need a Google API key?</summary><div class="a"><p>Not to see the map. The live Google map is built in. The key is needed for routes, destination search and traffic times (so Home, Work and "Set destination" work), for the nearby chargers' details and for Google Weather. Without it weather comes from Open-Meteo and chargers from OpenStreetMap. Google gives a free monthly allowance, and the key stays on your phone. See <a href="guide.html#google-key">the guide</a>.</p></div></details>
-    <details class="faq glass reveal"><summary>Can I use Yandex maps instead of Google?</summary><div class="a"><p>Yes. In <b>Settings &gt; Maps &gt; Map service</b> choose <b>Yandex API</b> and add your own free Yandex MapKit key. You get Yandex's live map with traffic, place search, nearby chargers and a route preview with Yandex's travel time. There is no turn-by-turn guidance, because Yandex's free licence does not include it. See <a href="guide.html#yandex-key">the guide</a>.</p></div></details>
+    <details class="faq glass reveal"><summary>Do I need a Google API key?</summary><div class="a"><p>Not to see the map. The live Google map is built in. The key is needed for routes, search and traffic times (so Home, Work and search work), for turn-by-turn guidance, for the nearby chargers' details and for Google Weather. Without it weather comes from Open-Meteo and chargers from OpenStreetMap. Google gives a free monthly allowance and charges your own account above it only after you accept that in the app; the key stays on your phone. See <a href="guide.html#google-key">the guide</a>.</p></div></details>
+    <details class="faq glass reveal"><summary>Can I use Yandex maps instead of Google?</summary><div class="a"><p>Yes. In <b>Settings &gt; Service &gt; API service</b> choose <b>Yandex</b> and add your own free Yandex MapKit key. You get Yandex's live map with traffic, place search, nearby chargers and a route preview with Yandex's travel time. There is no turn-by-turn guidance, because Yandex's free licence does not include it. See <a href="guide.html#yandex-key">the guide</a>.</p></div></details>
     <details class="faq glass reveal"><summary>The floating button does not bring the cockpit back</summary><div class="a"><p>Tap it once and wait about two seconds. Make sure <b>Display over other apps</b> is allowed and <b>Autostart</b> is on for the app. More tips are in the <a href="guide.html#troubleshooting">troubleshooting section</a>.</p></div></details>
     <details class="faq glass reveal"><summary>Something does not work. How do I report it?</summary><div class="a"><p>Open <b>Settings &gt; Support &gt; Report a problem</b> in the app, describe the problem and add screenshots. It opens a public report you can follow, and the screenshots and full log stay private. See <a href="#support">Support</a>.</p></div></details>
     <details class="faq glass reveal"><summary>Can I ask for a new feature?</summary><div class="a"><p>Yes. Open <b>Settings &gt; Support &gt; Request a feature</b> in the app and describe your idea. It opens a public request you can follow.</p></div></details>
@@ -298,7 +252,7 @@
   </div>
 </footer>
 
-<script src="assets/i18n.js?v=202610060241" defer></script>
-<script src="assets/site.js?v=202610060241" defer></script>
+<script src="assets/i18n.js?v=202610071200" defer></script>
+<script src="assets/site.js?v=202610071200" defer></script>
 </body>
 </html>
