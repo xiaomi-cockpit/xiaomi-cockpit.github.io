@@ -11,7 +11,7 @@
 <link rel="icon" href="assets/brand/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:image" content="https://xiaomi-cockpit.github.io/assets/brand/icon-512.png">
-<link rel="stylesheet" href="assets/style.css?v=202610071400">
+<link rel="stylesheet" href="assets/style.css?v=202610081200">
 <script>
   (function () {
     try {
@@ -143,6 +143,10 @@
       <tr><td>Swipe down on an opened dock</td><td>Closes it (portrait layout).</td></tr>
       <tr><td>Tap the cover, title or clock</td><td>Opens the music app, or the clock app. Tapping the weather opens your weather app.</td></tr>
       <tr><td>Swipe a notification card up, or tap outside it</td><td>Dismisses the phone notification card.</td></tr>
+      <tr><td>Press and hold the weather</td><td>Opens the settings at Weather.</td></tr>
+      <tr><td>Press and hold the music widget</td><td>Choose the default music app.</td></tr>
+      <tr><td>Press and hold the live map</td><td>Opens the settings at Service.</td></tr>
+      <tr><td>Press and hold Home or Work in the search card</td><td>Choose that place on the map.</td></tr>
     </table></div>
 
     <!-- ===== clock ===== -->
@@ -157,7 +161,7 @@
     <h3 id="weather-fx">Weather effects</h3>
     <p>The dashboard shows the weather as well as telling it. The clock card has a sky with clouds that follow the condition (clear, partly cloudy, overcast, fog, rain, snow, storm). Rain falls over the whole dashboard, splashes on the top edge of the cards, and small drops form on the clock card, merge and run down the glass, bending the text behind them. Snow piles up on the top edges of the cards and the dock. Thunderstorms add lightning that flashes across the screen.</p>
     <ul>
-      <li>With the <b>Light</b> theme, gloomy weather darkens the whole interface and switches the live map to its night style, and at <b>night</b> the app switches to the dark theme by itself. With <i>Follow phone</i>, <i>Dark</i> or <i>Auto (sunrise/sunset)</i> your Theme setting always wins and the weather never changes it.</li>
+      <li>The weather never changes the theme or the map: <i>Light</i> and <i>Dark</i> stay as you set them, and the live map follows your theme unless you choose <b>Night map</b> (see <a href="#map">Map and navigation</a>). The weather picture on the clock card fades softly at the card's edge, like a view through glass.</li>
       <li>The glass edge glow (the accent light along a card's rim) stays on top of the sky and the rain on the clock card.</li>
       <li>The effects are on by default. Switch everything off with <b>Settings &gt; Weather &gt; Weather animation</b>. Then the theme stays as you chose it.</li>
       <li>Rain and snow only show when your city is set and the weather data is there.</li>
@@ -172,6 +176,7 @@
       <li><b>Progress bar:</b> the larger layouts show the elapsed time, the length and a bar you can drag to jump in the song.</li>
       <li><b>Play when connected:</b> optionally start playing by itself when the car connects (<b>Settings &gt; Look and behaviour</b>).</li>
       <li><b>Accent waves:</b> soft waves in the accent colour flow behind the buttons while a song plays and fade towards the edges. The round buttons are frosted glass.</li>
+      <li><b>Cover:</b> with nothing playing the cover is a frosted-glass tile with a disc icon, and a tap anywhere on the widget opens your default music app. Press and hold the widget to choose that app.</li>
       <li>With the <i>Album art</i> accent, the colours of the app follow the cover of the current song.</li>
     </ul>
     <div class="tip"><p><b>Nothing shows?</b> The music card needs <b>Music and navigation access</b>. Check that it says <i>Allowed</i> in the setup screen.</p></div>
@@ -183,6 +188,7 @@
       <li><b>Driving view:</b> always on. The map tilts into 3D by itself once the car moves.</li>
       <li><b>Reset button:</b> after you drag, pinch or turn the map, a round arrow brings it back to your position. It shows only after you moved the map.</li>
       <li><b>Round buttons</b> on the left of the map: <b>Charger</b> (bolt), <b>Search</b>, <b>Voice</b> (cycles spoken guidance between silent, alerts only and guidance, Google service only), <b>View</b> (3D navigation view or north up) and <b>Settings</b> (map settings such as live traffic and satellite view). The small map card shows only Charger and Search until you expand it. While a destination is chosen or a route runs, an ✕ appears where the reset button sits.</li>
+      <li><b>Night map</b> (in the map's <b>Settings</b> button): <b>Auto</b> follows your theme, <b>On</b> always shows the night style of the map and <b>Off</b> the day style. The buttons and cards over the map change their colours to stay readable.</li>
       <li><b>Bolt button</b> (the first round button): finds nearby EV chargers, see <a href="#chargers">Nearby chargers</a>.</li>
     </ul>
     <p>Choose the service in <b>Settings &gt; Service &gt; API service</b> (the setup guide asks on the first start):</p>
@@ -276,7 +282,7 @@
       <tr><th>Section</th><th>What is in it</th></tr>
       <tr><td><b>Permissions</b></td><td>Every permission and its state, and a shortcut to App info. See <a href="#permissions">Allow what it needs</a>.</td></tr>
       <tr><td><b>Service</b></td><td><b>API service</b> (Google, Yandex or None) and <b>API status</b>: your key and its state (<i>Valid</i> in green, <i>Needs fixing</i> in red, <i>Not checked</i> and <i>Not added</i> in orange), the consent log, the guided-route count and withdrawing your consent. See <a href="#google-key">Get a Google key</a>.</td></tr>
-      <tr><td><b>Weather</b></td><td><b>Weather provider</b>, <b>City</b>, <b>Weather animation</b> and <b>Update frequency</b>.</td></tr>
+      <tr><td><b>Weather</b></td><td><b>Weather provider</b>, <b>City</b>, <b>Weather animation</b>, <b>Weather animation override</b> and <b>Update frequency</b>.</td></tr>
       <tr><td><b>Map</b></td><td><b>Home</b> and <b>Work</b> and, with Yandex, <b>Live traffic update</b>.</td></tr>
       <tr><td><b>Music</b></td><td>The <b>Default music app</b>. The dock apps are set on the dashboard itself: press and hold the dock.</td></tr>
       <tr><td><b>Look and behaviour</b></td><td><b>Language</b>, <b>Theme</b>, <b>Background</b>, <b>Animated background</b>, <b>Accent colour</b>, <b>Play music when connected to car</b>, <b>Show phone notifications on the dashboard</b>, <b>Floating home button</b> and <b>Power saver</b>. See <a href="#look">Looks and themes</a>.</td></tr>
@@ -288,11 +294,11 @@
     <!-- ===== look ===== -->
     <h2 id="look">Looks and themes</h2>
     <ul>
-      <li><b>Theme:</b> <i>Follow phone</i>, <i>Dark</i>, <i>Light</i> or <i>Auto (sunrise/sunset)</i>, which is dark between sunset and sunrise at your weather city. The dashboard switches by itself, with a smooth fade, when the phone changes mode, when the sun sets or rises, or when you change the setting. Your choice always wins: only <i>Light</i> lets the weather effects turn the screen dark at night.</li>
+      <li><b>Theme:</b> <i>Follow phone</i>, <i>Dark</i>, <i>Light</i> or <i>Auto (sunrise/sunset)</i>, which is dark between sunset and sunrise at your weather city. The dashboard switches by itself, with a smooth fade, when the phone changes mode, when the sun sets or rises, or when you change the setting. Your choice always wins: the weather never changes it.</li>
       <li><b>Background:</b> the colour styles <i>Cockpit</i>, <i>Dusk</i>, <i>Forest</i>, <i>Graphite</i> and <i>Slate</i>, or <i>My photo</i> from your gallery. A press and hold on an empty spot of the dashboard opens the picker too.</li>
       <li><b>Animated background:</b> soft moving light and large colour bubbles behind the glass (not used with a photo).</li>
       <li><b>Accent colour:</b> Mint, Sky, Violet, Pink, Orange, Yellow, Red, Lime, a custom colour, or <i>Album art</i> to follow the song.</li>
-            <li><b>Weather animation</b> (in <b>Settings &gt; Weather</b>): the sky, rain, snow and lightning, and (with the Light theme only) the gloomy look and the automatic dark theme at night.</li>
+            <li><b>Weather animation</b> (in <b>Settings &gt; Weather</b>): the sky, rain, snow and lightning. <b>Weather animation override</b>, just below it, shows any condition, for example snow, even when the real weather is different.</li>
       <li><b>Power saver:</b> turns off the animated background, the weather effects and the 3D buildings and updates the map less often. It also switches on by itself while the phone's battery saver is on or the phone is hot.</li>
       <li>The <b>glass shadow</b> under the panels and the <b>glass edge refraction</b> (Android 13 and newer: the rim of each panel, and of the live map, picks up the accent light of the bubbles behind it) are always on.</li>
       <li><b>Play music when connected to car</b>, <b>Show phone notifications on the dashboard</b>, <b>Floating home button</b>.</li>
@@ -350,7 +356,7 @@
   </div>
 </footer>
 
-<script src="assets/i18n.js?v=202610071400" defer></script>
-<script src="assets/site.js?v=202610071400" defer></script>
+<script src="assets/i18n.js?v=202610081200" defer></script>
+<script src="assets/site.js?v=202610081200" defer></script>
 </body>
 </html>

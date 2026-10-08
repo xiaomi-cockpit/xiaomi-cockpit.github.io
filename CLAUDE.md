@@ -58,3 +58,6 @@ No local build needed. To look at the pages: `python3 -m http.server`, then head
 
 ## Update (2.0.0)
 - Stops are red numbered discs in the hero and the Screens illustrations; the alternative-route icon now matches the app's (`Glyph.ALT`: a stem splitting into two arrows, the left branch dashed). The Telegram banner in the app repo (`.github/banner/release-banner.html`) uses a copy of the hero illustration: keep them in step.
+
+## Update (2.1.0)
+- Guide and features: the weather no longer changes the theme or the map (gloomy/night wording removed), Night map (Auto/On/Off), Weather animation override, the cover tile and tap/long-press on the music widget, and the four new long presses in the gestures table. All new texts have km/ru/pl entries; the key check (`?dumpkeys=1`) reports nothing missing except the logo.
